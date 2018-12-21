@@ -37,7 +37,7 @@
         android:layout_below="@id/corpus_word_layout"
         android:background="@android:color/darker_gray" />
 
-    <com.sadaqaworks.quranprojects.view.layout.FlowLayout
+    <com.atiq.MuslimAsset.view.layout.FlowLayout
         android:id="@+id/flow_corpus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
         </LinearLayout>
 
 
-    </com.sadaqaworks.quranprojects.view.layout.FlowLayout>
+    </com.atiq.MuslimAsset.view.layout.FlowLayout>
 
     <View
         android:id="@+id/divider2"

@@ -23,11 +23,11 @@
         android:visibility="gone"></TextView>
 
 
-    <com.sadaqaworks.quranprojects.view.layout.FlowLayout
+    <com.atiq.MuslimAsset.view.layout.FlowLayout
         android:id="@+id/flow_word_by_word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"></com.sadaqaworks.quranprojects.view.layout.FlowLayout>
+        android:visibility="gone"></com.atiq.MuslimAsset.view.layout.FlowLayout>
 
 
     <TextView

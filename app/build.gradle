@@ -8,7 +8,7 @@ android {
         lintConfig file("lint.xml")
     }
     defaultConfig {
-        applicationId "com.sadaqaworks.quranprojects"
+        applicationId "com.atiq.quranprojects"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 3
