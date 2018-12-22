@@ -6,17 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.atiq.MuslimAsset.R;
-import com.atiq.MuslimAsset.database.datasource.SurahDataSource;
-import com.atiq.MuslimAsset.fragment.AyahWordFragment;
+import com.atiq.MuslimAsset.database.SuratDataSource;
+import com.atiq.MuslimAsset.fragments.AyatFragment;
 
-public class AyahWordActivity extends AppCompatActivity {
+public class AyatActivity extends AppCompatActivity {
 
     static public String surahName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ayah);
+        setContentView(R.layout.activity_ayat);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -24,14 +24,14 @@ public class AyahWordActivity extends AppCompatActivity {
 
 
         Bundle bundle = this.getIntent().getExtras();
-        surahName = bundle.getString(SurahDataSource.SURAH_NAME_TRANSLATE);
+        surahName = bundle.getString(SuratDataSource.SURAH_NAME_TRANSLATE);
         getSupportActionBar().setTitle(surahName);
 
         if (savedInstanceState == null) {
             FragmentManager fragmentManager = getFragmentManager();
 
             fragmentManager.beginTransaction()
-                    .replace(R.id.main_container, AyahWordFragment.newInstance(bundle))
+                    .replace(R.id.main_container, AyatFragment.newInstance(bundle))
                     .commit();
         }
 

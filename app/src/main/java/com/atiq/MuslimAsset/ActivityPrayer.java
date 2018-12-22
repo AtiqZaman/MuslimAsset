@@ -24,7 +24,7 @@ public class ActivityPrayer extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
-
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(3);
@@ -36,8 +36,8 @@ public class ActivityPrayer extends AppCompatActivity {
 
                 switch (menuItem.getItemId()){
                     case R.id.ic_quran:
-                        //Intent intent1 = new Intent(ActivityPrayer.this,ActivityQuran.class);
-                        //startActivity(intent1);
+                        Intent intent1 = new Intent(ActivityPrayer.this,MainActivity.class);
+                        startActivity(intent1);
                         break;
                     case R.id.ic_hadith:
                         Intent intent2 = new Intent(ActivityPrayer.this,MainActivity.class);

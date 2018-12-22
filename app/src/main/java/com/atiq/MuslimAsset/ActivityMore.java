@@ -25,7 +25,7 @@ public class ActivityMore extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
-
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
 
         Menu menu = bottomNavigationView.getMenu();
@@ -38,8 +38,8 @@ public class ActivityMore extends AppCompatActivity {
 
                 switch (menuItem.getItemId()){
                     case R.id.ic_quran:
-                        //Intent intent1 = new Intent(ActivityMore.this,ActivityQuran.class);
-                        //startActivity(intent1);
+                        Intent intent1 = new Intent(ActivityMore.this,MainActivity.class);
+                        startActivity(intent1);
                         break;
                     case R.id.ic_hadith:
                         Intent intent2 = new Intent(ActivityMore.this,MainActivity.class);

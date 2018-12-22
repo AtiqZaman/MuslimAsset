@@ -1,6 +1,6 @@
 package com.atiq.MuslimAsset.model;
 
-public class Surah {
+public class Surat {
     private Long id;
 
     private String nameArabic;

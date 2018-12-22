@@ -3,7 +3,7 @@ package com.atiq.MuslimAsset.model;
 import java.util.ArrayList;
 
 
-public class AyahWord {
+public class Ayat {
     private ArrayList<Word> word;
     private String quranTranslate;
     private Long quranVerseId;

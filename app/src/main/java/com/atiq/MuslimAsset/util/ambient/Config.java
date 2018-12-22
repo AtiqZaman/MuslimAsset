@@ -1,4 +1,4 @@
-package com.atiq.MuslimAsset.util.settings;
+package com.atiq.MuslimAsset.util.ambient;
 
 import android.content.Context;
 import android.content.SharedPreferences;

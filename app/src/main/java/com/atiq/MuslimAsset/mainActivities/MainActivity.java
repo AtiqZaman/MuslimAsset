@@ -19,17 +19,16 @@ import com.atiq.MuslimAsset.ActivityHadith;
 import com.atiq.MuslimAsset.ActivityHome;
 import com.atiq.MuslimAsset.ActivityMore;
 import com.atiq.MuslimAsset.ActivityPrayer;
+import com.atiq.MuslimAsset.BottomNavigationViewHelper;
 import com.atiq.MuslimAsset.R;
 
 
 import com.atiq.MuslimAsset.database.DatabaseHelper;
-import com.atiq.MuslimAsset.fragment.SurahFragment;
-import com.atiq.MuslimAsset.util.settings.Config;
+import com.atiq.MuslimAsset.fragments.SuratFragment;
+import com.atiq.MuslimAsset.util.ambient.Config;
 
 
 import java.util.Locale;
-
-import javax.net.ssl.HostnameVerifier;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -52,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         //Start Quran Activity Code
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.main_container, SurahFragment.newInstance())
+                .replace(R.id.main_container, SuratFragment.newInstance())
                 .commit();
 
 

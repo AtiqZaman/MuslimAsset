@@ -1,15 +1,14 @@
-package com.atiq.MuslimAsset.database.datasource;
+package com.atiq.MuslimAsset.database;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.atiq.MuslimAsset.database.DatabaseHelper;
-import com.atiq.MuslimAsset.model.AyahWord;
+import com.atiq.MuslimAsset.model.Ayat;
 import com.atiq.MuslimAsset.model.Word;
 import java.util.ArrayList;
 
-public class AyahWordDataSource {
+public class AyatDataSource {
 
     public final static String AYAHWORD_WORDS_TRANSLATE_EN = "translate_en";
 
@@ -27,17 +26,17 @@ public class AyahWordDataSource {
 
     private DatabaseHelper databaseHelper;
 
-    public AyahWordDataSource(Context context) {
+    public AyatDataSource(Context context) {
 
         databaseHelper = new DatabaseHelper(context);
     }
 
-    public ArrayList<AyahWord> getEnglishAyahWordsBySurah(long surah_id, long ayah_number)
+    public ArrayList<Ayat> getEnglishAyahWordsBySurah(long surah_id, long ayah_number)
 
     {
         long tempVerseWord;
         long tempVerseQuran;
-        ArrayList<AyahWord> ayahWordArrayList = new ArrayList<AyahWord>();
+        ArrayList<Ayat> ayatArrayList = new ArrayList<Ayat>();
 
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
 
@@ -54,7 +53,7 @@ public class AyahWordDataSource {
             tempVerseWord = i;
             tempVerseQuran = i;
 
-            AyahWord ayahWord = new AyahWord();
+            Ayat ayat = new Ayat();
             ArrayList<Word> wordArrayList = new ArrayList<Word>();
 
             while (i == tempVerseWord && !cursor.isAfterLast()) {
@@ -80,23 +79,23 @@ public class AyahWordDataSource {
                 if (tempVerseQuran != i) {
                     continue;
                 }
-                ayahWord.setQuranVerseId(quranCursor.getLong(quranCursor.getColumnIndex(QURAN_VERSE_ID)));
+                ayat.setQuranVerseId(quranCursor.getLong(quranCursor.getColumnIndex(QURAN_VERSE_ID)));
 
-                ayahWord.setQuranTranslate(quranCursor.getString(quranCursor.getColumnIndex(QURAN_ENGLSIH)));
+                ayat.setQuranTranslate(quranCursor.getString(quranCursor.getColumnIndex(QURAN_ENGLSIH)));
 
                 quranCursor.moveToNext();
 
             }
 
-            ayahWord.setWord(wordArrayList);
-            ayahWordArrayList.add(ayahWord);
+            ayat.setWord(wordArrayList);
+            ayatArrayList.add(ayat);
         }
 
 
         quranCursor.close();
         cursor.close();
         db.close();
-        return ayahWordArrayList;
+        return ayatArrayList;
     }
 
 

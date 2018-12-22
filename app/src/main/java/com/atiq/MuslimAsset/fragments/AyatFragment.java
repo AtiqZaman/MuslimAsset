@@ -1,4 +1,4 @@
-package com.atiq.MuslimAsset.fragment;
+package com.atiq.MuslimAsset.fragments;
 
 
 import android.app.Fragment;
@@ -14,36 +14,36 @@ import android.widget.TextView;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.atiq.MuslimAsset.R;
-import com.atiq.MuslimAsset.adapter.AyahWordAdapter;
-import com.atiq.MuslimAsset.database.datasource.AyahWordDataSource;
-import com.atiq.MuslimAsset.database.datasource.SurahDataSource;
-import com.atiq.MuslimAsset.model.AyahWord;
-import com.atiq.MuslimAsset.util.settings.Config;
+import com.atiq.MuslimAsset.adapter.AyatAdapter;
+import com.atiq.MuslimAsset.database.AyatDataSource;
+import com.atiq.MuslimAsset.database.SuratDataSource;
+import com.atiq.MuslimAsset.model.Ayat;
+import com.atiq.MuslimAsset.util.ambient.Config;
 
 import java.util.ArrayList;
 
 import xyz.danoz.recyclerviewfastscroller.vertical.VerticalRecyclerViewFastScroller;
 
 
-public class AyahWordFragment extends Fragment {
+public class AyatFragment extends Fragment {
 
 
     long surah_id;
     long ayah_number;
     String lang;
-    private ArrayList<AyahWord> ayahWordArrayList;
+    private ArrayList<Ayat> ayatArrayList;
     private RecyclerView mRecyclerView;
-    private AyahWordAdapter ayahWordAdapter;
+    private AyatAdapter ayatAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    public AyahWordFragment() {
+    public AyatFragment() {
         // empty public constructor is required
     }
 
-    public static AyahWordFragment newInstance(Bundle bundle) {
-        AyahWordFragment ayahWordFragment = new AyahWordFragment();
-        ayahWordFragment.setArguments(bundle);
-        return ayahWordFragment;
+    public static AyatFragment newInstance(Bundle bundle) {
+        AyatFragment ayatFragment = new AyatFragment();
+        ayatFragment.setArguments(bundle);
+        return ayatFragment;
     }
 
     @Override
@@ -52,9 +52,9 @@ public class AyahWordFragment extends Fragment {
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         lang = sp.getString(Config.LANG, Config.defaultLang);
-        surah_id = getArguments().getLong(SurahDataSource.SURAH_ID_TAG);
-        ayah_number = getArguments().getLong(SurahDataSource.SURAH_AYAH_NUMBER);
-        ayahWordArrayList = getAyahWordsBySurah(surah_id, ayah_number);
+        surah_id = getArguments().getLong(SuratDataSource.SURAH_ID_TAG);
+        ayah_number = getArguments().getLong(SuratDataSource.SURAH_AYAH_NUMBER);
+        ayatArrayList = getAyahWordsBySurah(surah_id, ayah_number);
 
     }
 
@@ -74,7 +74,7 @@ public class AyahWordFragment extends Fragment {
         // Connect the scroller to the recycler (to let the recycler scroll the scroller's handle)
         mRecyclerView.setOnScrollListener(fastScroller.getOnScrollListener());
 
-        ayahWordAdapter = new AyahWordAdapter(ayahWordArrayList, getActivity(), surah_id);
+        ayatAdapter = new AyatAdapter(ayatArrayList, getActivity(), surah_id);
 
 
         return view;
@@ -86,7 +86,7 @@ public class AyahWordFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        mRecyclerView.setAdapter(ayahWordAdapter);
+        mRecyclerView.setAdapter(ayatAdapter);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -102,19 +102,19 @@ public class AyahWordFragment extends Fragment {
 
     }
 
-    public ArrayList<AyahWord> getAyahWordsBySurah(long surah_id, long ayah_number) {
-        ArrayList<AyahWord> ayahWordArrayList = new ArrayList<AyahWord>();
-        AyahWordDataSource ayahWordDataSource = new AyahWordDataSource(getActivity());
+    public ArrayList<Ayat> getAyahWordsBySurah(long surah_id, long ayah_number) {
+        ArrayList<Ayat> ayatArrayList = new ArrayList<Ayat>();
+        AyatDataSource ayatDataSource = new AyatDataSource(getActivity());
 
 
         switch (lang) {
 
             case Config.LANG_EN:
-                ayahWordArrayList = ayahWordDataSource.getEnglishAyahWordsBySurah(surah_id, ayah_number);
+                ayatArrayList = ayatDataSource.getEnglishAyahWordsBySurah(surah_id, ayah_number);
                 break;
         }
 
-        return ayahWordArrayList;
+        return ayatArrayList;
     }
 
 

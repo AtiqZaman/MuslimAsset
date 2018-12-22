@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.atiq.MuslimAsset.R;
-import com.atiq.MuslimAsset.model.AyahWord;
+import com.atiq.MuslimAsset.model.Ayat;
 import com.atiq.MuslimAsset.model.Word;
-import com.atiq.MuslimAsset.util.settings.Config;
+import com.atiq.MuslimAsset.util.ambient.Config;
 import com.atiq.MuslimAsset.view.layout.FlowLayout;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 
 
-public class AyahWordAdapter extends RecyclerView.Adapter<AyahWordAdapter.AyahViewHolder> {
+public class AyatAdapter extends RecyclerView.Adapter<AyatAdapter.AyahViewHolder> {
 
     static boolean showTranslation;
 
@@ -32,12 +32,12 @@ public class AyahWordAdapter extends RecyclerView.Adapter<AyahWordAdapter.AyahVi
 
     public Context context;
     long surah_id;
-    private ArrayList<AyahWord> ayahWordArrayList;
+    private ArrayList<Ayat> ayatArrayList;
 
-    public AyahWordAdapter(ArrayList<AyahWord> ayahWordArrayList, Context context, long surah_id) {
+    public AyatAdapter(ArrayList<Ayat> ayatArrayList, Context context, long surah_id) {
 
 
-        this.ayahWordArrayList = ayahWordArrayList;
+        this.ayatArrayList = ayatArrayList;
         this.context = context;
         this.surah_id = surah_id;
 
@@ -51,41 +51,41 @@ public class AyahWordAdapter extends RecyclerView.Adapter<AyahWordAdapter.AyahVi
 
     @Override
     public int getItemCount() {
-        return ayahWordArrayList.size();
+        return ayatArrayList.size();
     }
 
     @Override
     public long getItemId(int position) {
 
-        AyahWord ayahWord = ayahWordArrayList.get(position);
+        Ayat ayat = ayatArrayList.get(position);
         long itemId = 1;
 
-        for (Word word : ayahWord.getWord()) {
+        for (Word word : ayat.getWord()) {
             itemId = word.getVerseId();
         }
         return itemId;
     }
 
     @Override
-    public AyahWordAdapter.AyahViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AyatAdapter.AyahViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_ayah_word, parent, false);
-        AyahWordAdapter.AyahViewHolder viewHolder = new AyahWordAdapter.AyahViewHolder(view);
+        AyatAdapter.AyahViewHolder viewHolder = new AyatAdapter.AyahViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(AyahWordAdapter.AyahViewHolder holder, int position) {
+    public void onBindViewHolder(AyatAdapter.AyahViewHolder holder, int position) {
 
-        final AyahWord ayahWord = ayahWordArrayList.get(position);
+        final Ayat ayat = ayatArrayList.get(position);
 
-        holder.verse_idTextView.setText("(" + Long.toString(ayahWord.getQuranVerseId()) + ")");
+        holder.verse_idTextView.setText("(" + Long.toString(ayat.getQuranVerseId()) + ")");
 
 
         final LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         holder.flow_word_by_word.removeAllViews();
 
-        for (final Word word : ayahWord.getWord()) {
+        for (final Word word : ayat.getWord()) {
 
             final View view = inflater.inflate(R.layout.word_by_word, null);
             final TextView arabic = view.findViewById(R.id.word_arabic_textView);
@@ -106,7 +106,7 @@ public class AyahWordAdapter extends RecyclerView.Adapter<AyahWordAdapter.AyahVi
 
 
         if (showTranslation) {
-            holder.translate_textView.setText(ayahWord.getQuranTranslate());
+            holder.translate_textView.setText(ayat.getQuranTranslate());
             holder.translate_textView.setTextSize(fontSizeTranslation);
             holder.translate_textView.setVisibility(View.VISIBLE);
         }

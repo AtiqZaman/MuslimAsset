@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.atiq.MuslimAsset.mainActivities.AyahWordActivity"
+            android:name="com.atiq.MuslimAsset.mainActivities.AyatActivity"
             android:parentActivityName="com.atiq.MuslimAsset.mainActivities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

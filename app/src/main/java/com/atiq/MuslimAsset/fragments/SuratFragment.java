@@ -1,4 +1,4 @@
-package com.atiq.MuslimAsset.fragment;
+package com.atiq.MuslimAsset.fragments;
 
 
 import android.app.Fragment;
@@ -14,32 +14,32 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.atiq.MuslimAsset.R;
-import com.atiq.MuslimAsset.mainActivities.AyahWordActivity;
-import com.atiq.MuslimAsset.adapter.SurahAdapter;
-import com.atiq.MuslimAsset.database.datasource.SurahDataSource;
+import com.atiq.MuslimAsset.mainActivities.AyatActivity;
+import com.atiq.MuslimAsset.adapter.SuratAdapter;
+import com.atiq.MuslimAsset.database.SuratDataSource;
 import com.atiq.MuslimAsset.intrface.OnItemClickListener;
-import com.atiq.MuslimAsset.model.Surah;
-import com.atiq.MuslimAsset.util.settings.Config;
+import com.atiq.MuslimAsset.model.Surat;
+import com.atiq.MuslimAsset.util.ambient.Config;
 
 import java.util.ArrayList;
 
 
-public class SurahFragment extends Fragment {
+public class SuratFragment extends Fragment {
 
 
     static String lang;
-    private ArrayList<Surah> surahArrayList;
+    private ArrayList<Surat> suratArrayList;
     private RecyclerView mRecyclerView;
-    private SurahAdapter surahAdapter;
+    private SuratAdapter suratAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    public SurahFragment() {
+    public SuratFragment() {
         // enpty constructor is required
     }
 
-    public static SurahFragment newInstance() {
-        SurahFragment surahFragment = new SurahFragment();
-        return surahFragment;
+    public static SuratFragment newInstance() {
+        SuratFragment suratFragment = new SuratFragment();
+        return suratFragment;
     }
 
 
@@ -48,7 +48,7 @@ public class SurahFragment extends Fragment {
         super.onCreate(savedInstanceState);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         lang = sp.getString(Config.LANG, Config.defaultLang);
-        surahArrayList = getSurahArrayList();
+        suratArrayList = getSuratArrayList();
     }
 
 
@@ -57,7 +57,7 @@ public class SurahFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_surah, container, false);
         mRecyclerView = view.findViewById(R.id.recycler_surah_view);
-        surahAdapter = new SurahAdapter(surahArrayList, getActivity());
+        suratAdapter = new SuratAdapter(suratArrayList, getActivity());
 
         return view;
     }
@@ -67,7 +67,7 @@ public class SurahFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        mRecyclerView.setAdapter(surahAdapter);
+        mRecyclerView.setAdapter(suratAdapter);
 
 
         mRecyclerView.setHasFixedSize(true);
@@ -75,23 +75,23 @@ public class SurahFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        surahAdapter.SetOnItemClickListener(new OnItemClickListener() {
+        suratAdapter.SetOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                Surah surah = (Surah) surahAdapter.getItem(position);
+                Surat surat = (Surat) suratAdapter.getItem(position);
 
-                long surah_id = surah.getId(); //mRecyclerView.getAdapter().getItemId(position);
-                long ayah_number = surah.getAyahNumber();
-                String surah_name = surah.getNameTranslate();
+                long surah_id = surat.getId(); //mRecyclerView.getAdapter().getItemId(position);
+                long ayah_number = surat.getAyahNumber();
+                String surah_name = surat.getNameTranslate();
 
-                Log.d("SurahFragment", "ID: " + surah_id + " Surah Name: " + surah_name);
+                Log.d("SuratFragment", "ID: " + surah_id + " Surat Name: " + surah_name);
 
                 Bundle dataBundle = new Bundle();
-                dataBundle.putLong(SurahDataSource.SURAH_ID_TAG, surah_id);
-                dataBundle.putLong(SurahDataSource.SURAH_AYAH_NUMBER, ayah_number);
-                dataBundle.putString(SurahDataSource.SURAH_NAME_TRANSLATE, surah_name);
+                dataBundle.putLong(SuratDataSource.SURAH_ID_TAG, surah_id);
+                dataBundle.putLong(SuratDataSource.SURAH_AYAH_NUMBER, ayah_number);
+                dataBundle.putString(SuratDataSource.SURAH_NAME_TRANSLATE, surah_name);
 
-                Intent intent = new Intent(getActivity(), AyahWordActivity.class);
+                Intent intent = new Intent(getActivity(), AyatActivity.class);
                 intent.putExtras(dataBundle);
                 startActivity(intent);
 
@@ -103,18 +103,18 @@ public class SurahFragment extends Fragment {
 
     }
 
-    private ArrayList<Surah> getSurahArrayList() {
-        ArrayList<Surah> surahArrayList = new ArrayList<Surah>();
-        SurahDataSource surahDataSource = new SurahDataSource(getActivity());
+    private ArrayList<Surat> getSuratArrayList() {
+        ArrayList<Surat> suratArrayList = new ArrayList<Surat>();
+        SuratDataSource suratDataSource = new SuratDataSource(getActivity());
 
         switch (lang) {
 
             case Config.LANG_EN:
-                surahArrayList = surahDataSource.getEnglishSurahArrayList();
+                suratArrayList = suratDataSource.getEnglishSurahArrayList();
                 break;
         }
 
-        return surahArrayList;
+        return suratArrayList;
     }
 
 

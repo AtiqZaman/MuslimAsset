@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.atiq.MuslimAsset.util.settings.Config;
+import com.atiq.MuslimAsset.util.ambient.Config;
 
 public class App extends Application {
     public static App app;

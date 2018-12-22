@@ -9,41 +9,41 @@ import android.widget.TextView;
 
 import com.atiq.MuslimAsset.R;
 import com.atiq.MuslimAsset.intrface.OnItemClickListener;
-import com.atiq.MuslimAsset.model.Surah;
+import com.atiq.MuslimAsset.model.Surat;
 
 import java.util.ArrayList;
 
 
-public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHolder> {
+public class SuratAdapter extends RecyclerView.Adapter<SuratAdapter.SurahViewHolder> {
 
     OnItemClickListener mItemClickListener;
-    private ArrayList<Surah> surahArrayList;
+    private ArrayList<Surat> suratArrayList;
 
 
 
-    public SurahAdapter(ArrayList<Surah> surahArrayList, Activity activity) {
-        this.surahArrayList = surahArrayList;
+    public SuratAdapter(ArrayList<Surat> suratArrayList, Activity activity) {
+        this.suratArrayList = suratArrayList;
 
 
     }
 
 
     @Override
-    public SurahAdapter.SurahViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SuratAdapter.SurahViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_surah, parent, false);
-        SurahAdapter.SurahViewHolder viewHolder = new SurahAdapter.SurahViewHolder(view);
+        SuratAdapter.SurahViewHolder viewHolder = new SuratAdapter.SurahViewHolder(view);
 
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(SurahAdapter.SurahViewHolder holder, int position) {
+    public void onBindViewHolder(SuratAdapter.SurahViewHolder holder, int position) {
 
-        Surah surah = surahArrayList.get(position);
-        holder.surah_idTextView.setText(Long.toString(surah.getId()) + ".");
-        holder.translateTextView.setText(surah.getNameTranslate());
-        holder.arabicTextView.setText(surah.getNameArabic());
+        Surat surat = suratArrayList.get(position);
+        holder.surah_idTextView.setText(Long.toString(surat.getId()) + ".");
+        holder.translateTextView.setText(surat.getNameTranslate());
+        holder.arabicTextView.setText(surat.getNameArabic());
 
 
     }
@@ -51,12 +51,12 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
 
     public Object getItem(int position) {
 
-        return surahArrayList.get(position);
+        return suratArrayList.get(position);
     }
 
     @Override
     public int getItemCount() {
-        return surahArrayList.size();
+        return suratArrayList.size();
     }
 
 

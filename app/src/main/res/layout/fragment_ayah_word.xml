@@ -29,7 +29,7 @@
              android:layout_width="300dp"
              android:layout_height="70dp"
              android:scaleType="fitXY"
-             android:src="@drawable/bismillah2"
+             android:src="@drawable/bismillah"
              android:padding="4dp"
              android:layout_gravity="center"/>-->
 
