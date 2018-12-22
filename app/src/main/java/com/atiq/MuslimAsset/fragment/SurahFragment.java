@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.atiq.MuslimAsset.R;
-import com.atiq.MuslimAsset.activity.AyahWordActivity;
+import com.atiq.MuslimAsset.mainActivities.AyahWordActivity;
 import com.atiq.MuslimAsset.adapter.SurahAdapter;
 import com.atiq.MuslimAsset.database.datasource.SurahDataSource;
 import com.atiq.MuslimAsset.intrface.OnItemClickListener;

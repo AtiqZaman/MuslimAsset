@@ -7,6 +7,8 @@
     <color name="lightPrimaryColor">#B6B6B6</color>
     <color name="primaryTextColor">#212121</color>
     <color name="secondaryTextColor">#727272</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorGray">#c3c3c3</color>
 
 
     <color name="mushaf2">#eeeade</color>

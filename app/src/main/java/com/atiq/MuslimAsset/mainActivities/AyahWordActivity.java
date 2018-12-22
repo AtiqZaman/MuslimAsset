@@ -1,4 +1,4 @@
-package com.atiq.MuslimAsset.activity;
+package com.atiq.MuslimAsset.mainActivities;
 
 import android.app.FragmentManager;
 import android.os.Bundle;

@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme.Mushaf">
         <activity
-            android:name="com.atiq.MuslimAsset.activity.MainActivity"
+            android:name="com.atiq.MuslimAsset.mainActivities.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,12 +20,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.atiq.MuslimAsset.activity.AyahWordActivity"
-            android:parentActivityName="com.atiq.MuslimAsset.activity.MainActivity">
+            android:name="com.atiq.MuslimAsset.mainActivities.AyahWordActivity"
+            android:parentActivityName="com.atiq.MuslimAsset.mainActivities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.atiq.MuslimAsset.activity.MainActivity" />
+                android:value="com.atiq.MuslimAsset.mainActivities.MainActivity" />
         </activity>
+
+
+
+        <activity android:name=".ActivityHome"></activity>
+
+        <activity android:name=".ActivityHadith"></activity>
+        <activity android:name=".ActivityPrayer"></activity>
+        <activity android:name=".ActivityMore"></activity>
+
+
+
 
     </application>
 

@@ -1,15 +1,27 @@
-package com.atiq.MuslimAsset.activity;
+package com.atiq.MuslimAsset.mainActivities;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
+import com.atiq.MuslimAsset.ActivityHadith;
+import com.atiq.MuslimAsset.ActivityHome;
+import com.atiq.MuslimAsset.ActivityMore;
+import com.atiq.MuslimAsset.ActivityPrayer;
 import com.atiq.MuslimAsset.R;
+
+
 import com.atiq.MuslimAsset.database.DatabaseHelper;
 import com.atiq.MuslimAsset.fragment.SurahFragment;
 import com.atiq.MuslimAsset.util.settings.Config;
@@ -17,6 +29,7 @@ import com.atiq.MuslimAsset.util.settings.Config;
 
 import java.util.Locale;
 
+import javax.net.ssl.HostnameVerifier;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +47,51 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        //Start Quran Activity Code
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(0);
+        menuItem.setChecked(true);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch (menuItem.getItemId()){
+                    case R.id.ic_quran:
+
+                        break;
+                    case R.id.ic_hadith:
+                        Intent intent2 = new Intent(MainActivity.this,ActivityHadith.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.ic_home:
+                        Intent intent3 = new Intent(MainActivity.this,ActivityHome.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.ic_prayers:
+                        Intent intent4 = new Intent(MainActivity.this,ActivityPrayer.class);
+                        startActivity(intent4);
+                        break;
+                    case R.id.ic_more:
+                        Intent intent5 = new Intent(MainActivity.this,ActivityMore.class);
+                        startActivity(intent5);
+                        break;
+                }
+
+                return false;
+            }
+        });
+
+
+
+        //End Quran Activity code
+
+
 
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);

@@ -3,6 +3,29 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_about">About</string>
 
+    <!--Bottom navigationBar -->
+    <string name="muslimasset">muslimasset</string>
+    <string name="this_is_home_page">This is Home Page</string>
+    <string name="tab1">Tab1</string>
+    <string name="tab2">Tab2</string>
+    <string name="tab3">Tab3</string>
+    <string name="Tab1">Tab1</string>
+    <string name="Tab2">Tab2</string>
+    <string name="Tab3">Tab3</string>
+    <string name="testbtn_1">TESTBTN 1</string>
+    <string name="testbtn_2">TESTBTN 2</string>
+    <string name="testbtn_3">TESTBTN 3</string>
+    <string name="textview">TextView</string>
+    <string name="quran">Quran</string>
+    <string name="hadith">Hadith</string>
+    <string name="home">Home</string>
+    <string name="prayers">Prayers</string>
+    <string name="more">More</string>
+    <!--Bottom navigationBar -->
+
+
+
+
     <!--ToolBar-->
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
