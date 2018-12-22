@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/ic_quran"
+        android:icon="@drawable/ic_reading_quran"
+        android:title="@string/quran"/>
+
+    <item android:id="@+id/ic_hadith"
+        android:icon="@drawable/ic_hadth"
+        android:title="@string/hadith"/>
+    <item android:id="@+id/ic_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/home"/>
+    <item android:id="@+id/ic_prayers"
+        android:icon="@drawable/ic_prayers_black_24dp"
+        android:title="@string/prayers"/>
+    <item android:id="@+id/ic_more"
+        android:icon="@drawable/ic_more"
+        android:title="@string/more"/>
+
+</menu>
