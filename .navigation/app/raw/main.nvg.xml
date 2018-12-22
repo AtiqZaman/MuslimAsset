@@ -4,7 +4,7 @@
     <locations class="java.util.ArrayList">
         <statePointEntry>
             <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
-                className="com.atiq.MuslimAsset.mainActivities.AyahWordActivity" />
+                className="com.atiq.MuslimAsset.mainActivities.AyatActivity" />
             <point x="1212" y="168" />
         </statePointEntry>
         <statePointEntry>
