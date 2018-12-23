@@ -25,7 +25,7 @@ import com.atiq.MuslimAsset.R;
 
 import com.atiq.MuslimAsset.database.DatabaseHelper;
 import com.atiq.MuslimAsset.fragments.SuratFragment;
-import com.atiq.MuslimAsset.util.ambient.Config;
+import com.atiq.MuslimAsset.util.configurations.settings;
 
 
 import java.util.Locale;
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         dbVersionPrefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
 
 
-        lang = sharedPreferences.getString(Config.LANG, Config.defaultLang);
+        lang = sharedPreferences.getString(settings.LANG, settings.defaultLang);
         setLocaleEnglish();
 
         FragmentManager fragmentManager = getFragmentManager();
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (DatabaseHelper.DATABASE_VERSION > dbVersionPrefs.getInt(Config.DATABASE_VERSION, 0)) {
+        if (DatabaseHelper.DATABASE_VERSION > dbVersionPrefs.getInt(settings.DATABASE_VERSION, 0)) {
             Log.d("MyActivity onResume()", "First Run or dbUpgrade");
             {
 
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void setLocaleEnglish() {
-        Locale locale = new Locale(Config.LANG_EN);
+        Locale locale = new Locale(settings.LANG_EN);
         Locale.setDefault(locale);
 
 

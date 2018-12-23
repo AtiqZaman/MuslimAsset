@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.atiq.MuslimAsset.R;
 import com.atiq.MuslimAsset.model.Ayat;
 import com.atiq.MuslimAsset.model.Word;
-import com.atiq.MuslimAsset.util.ambient.Config;
+import com.atiq.MuslimAsset.util.configurations.settings;
 import com.atiq.MuslimAsset.view.layout.FlowLayout;
 
 import java.util.ArrayList;
@@ -23,28 +23,28 @@ import java.util.ArrayList;
 
 public class AyatAdapter extends RecyclerView.Adapter<AyatAdapter.AyahViewHolder> {
 
-    static boolean showTranslation;
+    static boolean displayTranslation;
 
 
-    static int fontSizeArabic;
-    static int fontSizeTranslation;
+    static int arabicFontSize;
+    static int translationFontSize;
 
 
     public Context context;
-    long surah_id;
+    long surahId;
     private ArrayList<Ayat> ayatArrayList;
 
-    public AyatAdapter(ArrayList<Ayat> ayatArrayList, Context context, long surah_id) {
+    public AyatAdapter(ArrayList<Ayat> ayatArrayList, Context context, long surahId) {
 
 
         this.ayatArrayList = ayatArrayList;
         this.context = context;
-        this.surah_id = surah_id;
+        this.surahId = surahId;
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        showTranslation = sharedPreferences.getBoolean(Config.SHOW_TRANSLATION, Config.defaultShowTranslation);
-        fontSizeArabic = Integer.parseInt(sharedPreferences.getString(Config.FONT_SIZE_ARABIC, Config.defaultFontSizeArabic));
-        fontSizeTranslation = Integer.parseInt(sharedPreferences.getString(Config.FONT_SIZE_TRANSLATION, Config.defaultFontSizeTranslation));
+        displayTranslation = sharedPreferences.getBoolean(settings.SHOW_TRANSLATION, settings.defaultShowTranslation);
+       arabicFontSize = Integer.parseInt(sharedPreferences.getString(settings.FONT_SIZE_ARABIC, settings.defaultFontSizeArabic));
+        translationFontSize = Integer.parseInt(sharedPreferences.getString(settings.FONT_SIZE_TRANSLATION, settings.defaultFontSizeTranslation));
 
     }
 
@@ -90,7 +90,7 @@ public class AyatAdapter extends RecyclerView.Adapter<AyatAdapter.AyahViewHolder
             final View view = inflater.inflate(R.layout.word_by_word, null);
             final TextView arabic = view.findViewById(R.id.word_arabic_textView);
 
-            arabic.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSizeArabic);
+            arabic.setTextSize(TypedValue.COMPLEX_UNIT_SP, arabicFontSize);
 
             arabic.setText(fixArabic(word.getWordsAr()));
 
@@ -105,9 +105,9 @@ public class AyatAdapter extends RecyclerView.Adapter<AyatAdapter.AyahViewHolder
 
 
 
-        if (showTranslation) {
+        if (displayTranslation) {
             holder.translate_textView.setText(ayat.getQuranTranslate());
-            holder.translate_textView.setTextSize(fontSizeTranslation);
+            holder.translate_textView.setTextSize(translationFontSize);
             holder.translate_textView.setVisibility(View.VISIBLE);
         }
 

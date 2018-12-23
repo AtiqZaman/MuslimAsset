@@ -19,7 +19,7 @@ import com.atiq.MuslimAsset.adapter.SuratAdapter;
 import com.atiq.MuslimAsset.database.SuratDataSource;
 import com.atiq.MuslimAsset.intrface.OnItemClickListener;
 import com.atiq.MuslimAsset.model.Surat;
-import com.atiq.MuslimAsset.util.ambient.Config;
+import com.atiq.MuslimAsset.util.configurations.settings;
 
 import java.util.ArrayList;
 
@@ -47,7 +47,7 @@ public class SuratFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        lang = sp.getString(Config.LANG, Config.defaultLang);
+        lang = sp.getString(settings.LANG, settings.defaultLang);
         suratArrayList = getSuratArrayList();
     }
 
@@ -109,7 +109,7 @@ public class SuratFragment extends Fragment {
 
         switch (lang) {
 
-            case Config.LANG_EN:
+            case settings.LANG_EN:
                 suratArrayList = suratDataSource.getEnglishSurahArrayList();
                 break;
         }

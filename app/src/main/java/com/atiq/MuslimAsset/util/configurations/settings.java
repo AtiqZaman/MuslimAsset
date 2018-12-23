@@ -1,4 +1,4 @@
-package com.atiq.MuslimAsset.util.ambient;
+package com.atiq.MuslimAsset.util.configurations;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,7 +6,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 
-public class Config {
+public class settings {
 
 
 
@@ -38,17 +38,17 @@ public class Config {
 
 
     public void load(Context context) {
-        Log.d("Config", "Load");
+        Log.d("settings", "Load");
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         try {
             loadDefault();
-            fontArabic = sp.getString(Config.ARABIC_FONT, Config.defaultArabicFont);
-            fontSizeArabic = sp.getString(Config.FONT_SIZE_ARABIC, Config.defaultFontSizeArabic);
-            Log.d("Config", "Loading Custom");
+            fontArabic = sp.getString(settings.ARABIC_FONT, settings.defaultArabicFont);
+            fontSizeArabic = sp.getString(settings.FONT_SIZE_ARABIC, settings.defaultFontSizeArabic);
+            Log.d("settings", "Loading Custom");
 
         } catch (Exception e) {
             loadDefault();
-            Log.d("Config", "Exception Loading Defaults");
+            Log.d("settings", "Exception Loading Defaults");
         }
     }
 

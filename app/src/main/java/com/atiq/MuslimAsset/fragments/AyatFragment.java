@@ -12,13 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.atiq.MuslimAsset.util.configurations.settings;
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.atiq.MuslimAsset.R;
 import com.atiq.MuslimAsset.adapter.AyatAdapter;
 import com.atiq.MuslimAsset.database.AyatDataSource;
 import com.atiq.MuslimAsset.database.SuratDataSource;
 import com.atiq.MuslimAsset.model.Ayat;
-import com.atiq.MuslimAsset.util.ambient.Config;
 
 import java.util.ArrayList;
 
@@ -51,7 +51,7 @@ public class AyatFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        lang = sp.getString(Config.LANG, Config.defaultLang);
+        lang = sp.getString(settings.LANG, settings.defaultLang);
         surah_id = getArguments().getLong(SuratDataSource.SURAH_ID_TAG);
         ayah_number = getArguments().getLong(SuratDataSource.SURAH_AYAH_NUMBER);
         ayatArrayList = getAyahWordsBySurah(surah_id, ayah_number);
@@ -109,7 +109,7 @@ public class AyatFragment extends Fragment {
 
         switch (lang) {
 
-            case Config.LANG_EN:
+            case settings.LANG_EN:
                 ayatArrayList = ayatDataSource.getEnglishAyahWordsBySurah(surah_id, ayah_number);
                 break;
         }
