@@ -31,7 +31,7 @@ public class AyatActivity extends AppCompatActivity {
             FragmentManager fragmentManager = getFragmentManager();
 
             fragmentManager.beginTransaction()
-                    .replace(R.id.main_container, AyatFragment.newInstance(bundle))
+                    .replace(R.id.main_box, AyatFragment.newInstance(bundle))
                     .commit();
         }
 

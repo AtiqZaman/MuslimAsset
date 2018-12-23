@@ -33,9 +33,8 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    static String lang;
-
-    SharedPreferences dbVersionPrefs = null;
+    static String language;
+    SharedPreferences dbVersPreferences = null;
     SharedPreferences sharedPreferences;
 
 
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         //Start Quran Activity Code
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
-
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
         Menu menu = bottomNavigationView.getMenu();
@@ -96,15 +94,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        dbVersionPrefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
+        dbVersPreferences = getSharedPreferences(getPackageName(), MODE_PRIVATE);
 
 
-        lang = sharedPreferences.getString(settings.LANG, settings.defaultLang);
-        setLocaleEnglish();
+        language = sharedPreferences.getString(settings.LANG, settings.defaultLang);
+        setEnglish();
 
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.main_container, SuratFragment.newInstance())
+                .replace(R.id.main_box, SuratFragment.newInstance())
                 .commit();
 
 
@@ -113,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (DatabaseHelper.DATABASE_VERSION > dbVersionPrefs.getInt(settings.DATABASE_VERSION, 0)) {
+        if (DatabaseHelper.DATABASE_VERSION > dbVersPreferences.getInt(settings.DATABASE_VERSION, 0)) {
             Log.d("MyActivity onResume()", "First Run or dbUpgrade");
             {
 
@@ -125,16 +123,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void setLocaleEnglish() {
+    public void setEnglish() {
         Locale locale = new Locale(settings.LANG_EN);
         Locale.setDefault(locale);
-
-
 
     }
 
     private class AsyncInsertData extends AsyncTask<Void, Void, Void> {
-
 
         @Override
         protected Void doInBackground(Void... params) {
