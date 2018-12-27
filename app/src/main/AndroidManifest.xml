@@ -7,34 +7,50 @@
         android:allowBackup="true"
         android:configChanges="keyboardHidden|orientation|screenSize"
         android:fullBackupContent="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:theme="@style/AppTheme.Mushaf">
-        <activity
 
-            android:name="com.atiq.MuslimAsset.mainActivities.MainActivity"
-            android:label="@string/app_name">
+        <activity
+            android:name="com.atiq.MuslimAsset.mainActivities.MainActivityQuran"
+            android:label="@string/nameTopBarQuran">
+
+        </activity>
+
+        <activity
+            android:name="com.atiq.MuslimAsset.mainActivities.AyatActivity"
+            android:parentActivityName="com.atiq.MuslimAsset.mainActivities.MainActivityQuran">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.atiq.MuslimAsset.mainActivities.MainActivityQuran" />
+        </activity>
+
+
+
+        <activity
+            android:name=".ActivityHome"
+            android:label="@string/nameTopBarHome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
         <activity
-            android:name="com.atiq.MuslimAsset.mainActivities.AyatActivity"
-            android:parentActivityName="com.atiq.MuslimAsset.mainActivities.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.atiq.MuslimAsset.mainActivities.MainActivity" />
+            android:name=".ActivityHadith"
+            android:label="@string/nameTopBarHadith">
+
         </activity>
 
+        <activity android:name=".ActivityPrayer"
+            android:label="@string/nameTopBarPryers">
 
+        </activity>
 
-        <activity android:name=".ActivityHome"></activity>
+        <activity android:name=".ActivityMore"
+            android:label="@string/nameTopBarMore">
 
-        <activity android:name=".ActivityHadith"></activity>
-        <activity android:name=".ActivityPrayer"></activity>
-        <activity android:name=".ActivityMore"></activity>
+        </activity>
 
 
 

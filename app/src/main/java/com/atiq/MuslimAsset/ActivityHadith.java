@@ -6,11 +6,12 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.atiq.MuslimAsset.mainActivities.MainActivity;
+import com.atiq.MuslimAsset.mainActivities.MainActivityQuran;
 
 public class ActivityHadith extends AppCompatActivity {
 
@@ -18,6 +19,11 @@ public class ActivityHadith extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hadith);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Hadith");
+
 
         TextView title = (TextView) findViewById(R.id.hadithActivity);
         title.setText("This is Hadith Activity");
@@ -36,7 +42,7 @@ public class ActivityHadith extends AppCompatActivity {
 
                 switch (menuItem.getItemId()){
                     case R.id.ic_quran:
-                        Intent intent1 = new Intent(ActivityHadith.this,MainActivity.class);
+                        Intent intent1 = new Intent(ActivityHadith.this,MainActivityQuran.class);
                         startActivity(intent1);
                         break;
                     case R.id.ic_hadith:

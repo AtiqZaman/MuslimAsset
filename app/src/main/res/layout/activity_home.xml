@@ -11,21 +11,21 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
+        android:layout_height="match_parent"
+        android:id="@+id/relLayout">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="54dp"
-
+            android:id="@+id/relLayoutTopBar"
             android:layout_alignParentTop="true">
 
 
-
-
-
+            <include
+                layout="@layout/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
             <android.support.design.widget.AppBarLayout
@@ -35,12 +35,6 @@
 
             </android.support.design.widget.AppBarLayout>
 
-
-
-
-
-
-
         </RelativeLayout>
 
 
@@ -48,11 +42,16 @@
 
 
         <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/relLayoutMiddle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/relLayoutMiddle"
-            android:layout_below="@+id/relLayoutTopBar"
-            android:layout_above="@+id/relLayoutBotBar">
+            android:orientation="vertical"
+            android:layout_above="@+id/relLayoutBotBar"
+            android:layout_below="@+id/relLayoutTopBar">
+            tools:context=".ActivityHome">
 
 
             <TextView
@@ -63,13 +62,17 @@
                 android:id="@+id/homeActivity"
                 android:textAlignment="center"/>
 
+
+
+            <FrameLayout
+                android:id="@+id/main_box"
+                android:layout_width="match_parent"
+                android:layout_height="650dp" >
+
+            </FrameLayout>
+
+
         </RelativeLayout>
-
-
-
-
-
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -92,3 +95,9 @@
 
 
 </android.support.design.widget.CoordinatorLayout>
+
+
+
+
+
+

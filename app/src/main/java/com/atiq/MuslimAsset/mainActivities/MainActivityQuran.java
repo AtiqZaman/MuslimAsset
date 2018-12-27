@@ -31,7 +31,7 @@ import com.atiq.MuslimAsset.util.configurations.settings;
 import java.util.Locale;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityQuran extends AppCompatActivity {
 
     static String language;
     SharedPreferences dbVersPreferences = null;
@@ -65,19 +65,19 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
                     case R.id.ic_hadith:
-                        Intent intent2 = new Intent(MainActivity.this,ActivityHadith.class);
+                        Intent intent2 = new Intent(MainActivityQuran.this,ActivityHadith.class);
                         startActivity(intent2);
                         break;
                     case R.id.ic_home:
-                        Intent intent3 = new Intent(MainActivity.this,ActivityHome.class);
+                        Intent intent3 = new Intent(MainActivityQuran.this,ActivityHome.class);
                         startActivity(intent3);
                         break;
                     case R.id.ic_prayers:
-                        Intent intent4 = new Intent(MainActivity.this,ActivityPrayer.class);
+                        Intent intent4 = new Intent(MainActivityQuran.this,ActivityPrayer.class);
                         startActivity(intent4);
                         break;
                     case R.id.ic_more:
-                        Intent intent5 = new Intent(MainActivity.this,ActivityMore.class);
+                        Intent intent5 = new Intent(MainActivityQuran.this,ActivityMore.class);
                         startActivity(intent5);
                         break;
                 }
