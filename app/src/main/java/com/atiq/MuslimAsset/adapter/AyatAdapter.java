@@ -60,7 +60,7 @@ public class AyatAdapter extends RecyclerView.Adapter<AyatAdapter.AyahViewHolder
         Ayat ayat = ayatArrayList.get(position);
         long itemId = 1;
 
-        for (Word word : ayat.getWord()) {
+        for (Word word : ayat.getAyatWord()) {
             itemId = word.getVerseId();
         }
         return itemId;
@@ -85,7 +85,7 @@ public class AyatAdapter extends RecyclerView.Adapter<AyatAdapter.AyahViewHolder
         final LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         holder.flow_word_by_word.removeAllViews();
 
-        for (final Word word : ayat.getWord()) {
+        for (final Word word : ayat.getAyatWord()) {
 
             final View view = inflater.inflate(R.layout.word_by_word, null);
             final TextView arabic = view.findViewById(R.id.word_arabic_textView);

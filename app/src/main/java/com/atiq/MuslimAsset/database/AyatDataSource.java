@@ -87,7 +87,7 @@ public class AyatDataSource {
 
             }
 
-            ayat.setWord(wordArrayList);
+            ayat.setAyatWord(wordArrayList);
             ayatArrayList.add(ayat);
         }
 

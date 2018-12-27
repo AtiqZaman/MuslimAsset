@@ -8,11 +8,11 @@ public class Ayat {
     private String quranTranslate;
     private Long quranVerseId;
 
-    public ArrayList<Word> getWord() {
+    public ArrayList<Word> getAyatWord() {
         return word;
     }
 
-    public void setWord(ArrayList<Word> word) {
+    public void setAyatWord(ArrayList<Word> word) {
         this.word = word;
     }
 
