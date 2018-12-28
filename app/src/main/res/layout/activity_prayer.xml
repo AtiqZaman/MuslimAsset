@@ -50,7 +50,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_above="@+id/relLayoutBotBar"
-            android:layout_below="@+id/relLayoutTopBar">
+            android:layout_below="@+id/relLayoutTopBar"
             tools:context=".ActivityPrayer">
 
 

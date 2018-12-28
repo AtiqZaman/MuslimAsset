@@ -50,24 +50,27 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_above="@+id/relLayoutBotBar"
-            android:layout_below="@+id/relLayoutTopBar">
+            android:layout_below="@+id/relLayoutTopBar"
             tools:context=".ActivityHome">
+
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="0dp"
                 android:textSize="30sp"
                 android:id="@+id/homeActivity"
-                android:textAlignment="center"/>
-
+                android:textAlignment="center"
+                android:background="@drawable/homebackground"/>
 
 
             <FrameLayout
                 android:id="@+id/main_box"
                 android:layout_width="match_parent"
-                android:layout_height="650dp" >
+                android:layout_height="650dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp">
 
             </FrameLayout>
 

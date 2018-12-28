@@ -47,4 +47,5 @@ dependencies {
     implementation 'jp.wasabeef:recyclerview-animators:1.3.0'
     implementation 'com.bartoszlipinski.recyclerviewheader:library:1.2.0'
     implementation 'xyz.danoz:recyclerviewfastscroller:0.1.3'
+    implementation 'com.android.support:cardview-v7:27.1.0'
 }

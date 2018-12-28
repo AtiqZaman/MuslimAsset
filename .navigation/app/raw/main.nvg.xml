@@ -14,7 +14,7 @@
         </statePointEntry>
         <statePointEntry>
             <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
-                className="com.atiq.MuslimAsset.mainActivities.MainActivity" />
+                className="com.atiq.MuslimAsset.mainActivities.MainActivityQuran" />
             <point x="1312" y="300" />
         </statePointEntry>
         <statePointEntry>
