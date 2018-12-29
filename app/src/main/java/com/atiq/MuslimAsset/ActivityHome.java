@@ -8,7 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+
 
 import com.atiq.MuslimAsset.mainActivities.MainActivityQuran;
 
@@ -27,9 +28,7 @@ public class ActivityHome extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("Home");
 
-        TextView title = (TextView) findViewById(R.id.homeActivity);
-        title.setText("This is Home Activity");
-
+        findViewById(R.id.digitalClock);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);

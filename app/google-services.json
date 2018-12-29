@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "803812557324",
+    "firebase_url": "https://muslimasset-8394d.firebaseio.com",
+    "project_id": "muslimasset-8394d",
+    "storage_bucket": "muslimasset-8394d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803812557324:android:980a1e3f4de456bb",
+        "android_client_info": {
+          "package_name": "com.atiq.MuslimAsset"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803812557324-u500f4sqd7hpluesik21moac09l60s2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atiq.MuslimAsset",
+            "certificate_hash": "8e1db359dbec916b74ae0b972a354458eb9d1923"
+          }
+        },
+        {
+          "client_id": "803812557324-s78mvdljk5b0orghrm82dh1vrmdii4vi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_EB2dmG9LNCw7Crp4VbbQ3S5_7YviEaA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803812557324-s78mvdljk5b0orghrm82dh1vrmdii4vi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
