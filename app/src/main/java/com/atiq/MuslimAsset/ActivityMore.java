@@ -25,11 +25,6 @@ public class ActivityMore extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("More");
 
-
-        TextView title = (TextView) findViewById(R.id.moreActivity);
-        title.setText("This is more Activity");
-
-
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 

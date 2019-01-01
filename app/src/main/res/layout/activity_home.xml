@@ -31,7 +31,8 @@
         </RelativeLayout>
 
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/topwidgetlayout"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:gravity="center"
@@ -49,7 +50,7 @@
                 android:textColor="@color/colorWhite"
                 android:textSize="35sp"/>
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
 

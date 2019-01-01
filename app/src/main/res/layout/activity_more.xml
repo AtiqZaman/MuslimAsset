@@ -28,12 +28,6 @@
                 android:layout_height="wrap_content" />
 
 
-            <android.support.design.widget.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-            </android.support.design.widget.AppBarLayout>
 
         </RelativeLayout>
 
@@ -52,24 +46,6 @@
             android:layout_above="@+id/relLayoutBotBar"
             android:layout_below="@+id/relLayoutTopBar"
             tools:context=".ActivityMore">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:textSize="30sp"
-                android:id="@+id/moreActivity"
-                android:textAlignment="center"/>
-
-
-
-            <FrameLayout
-                android:id="@+id/main_box"
-                android:layout_width="match_parent"
-                android:layout_height="650dp" >
-
-            </FrameLayout>
 
 
         </RelativeLayout>

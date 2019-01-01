@@ -8,14 +8,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.widget.RelativeLayout;
 
 
 import com.atiq.MuslimAsset.mainActivities.MainActivityQuran;
 
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
+
 public class ActivityHome extends AppCompatActivity {
 
 
+    private RelativeLayout topWidgetLayout;
 
 
     @Override
@@ -28,7 +34,26 @@ public class ActivityHome extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("Home");
 
+
+        // start hijri data
+
+        // end hojri data
+
         findViewById(R.id.digitalClock);
+
+
+
+        // start random background images
+
+        topWidgetLayout = (RelativeLayout) findViewById(R.id.topwidgetlayout);
+
+        Timer timerBackgroundImage = new Timer();
+        MyTimer mt = new MyTimer();
+
+        timerBackgroundImage.schedule(mt, 20000, 20000);
+
+
+        // End random images
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
@@ -68,6 +93,31 @@ public class ActivityHome extends AppCompatActivity {
         });
 
     }
+
+
+
+    //start remaining code of random background images
+    class MyTimer extends TimerTask {
+
+        public void run() {
+
+            runOnUiThread(new Runnable() {
+                public void run() {
+
+                    int Images[] = { R.drawable.homebackground, R.drawable.homebackground1, R.drawable.homebackground3,
+                            R.drawable.homebackground4, R.drawable.homebackground6, R.drawable.homebackground7 };
+                    //mylay.setBackgroundResource(Images[getRandomNumber()]);
+                    topWidgetLayout.setBackgroundResource(Images[getRandomNumber()]);
+                }
+
+                private int getRandomNumber() {
+                    // TODO Auto-generated method stub
+                    return new Random().nextInt(5);}
+            });
+        }
+    }
+
+    //End remaining code of random background images
 
 
 }
