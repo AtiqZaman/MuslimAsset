@@ -11,14 +11,16 @@ import com.atiq.MuslimAsset.R;
 public class MyHolder extends RecyclerView.ViewHolder {
 
     //Views
-    ImageView mImageIv;
-    TextView mTitleTv, mDescrTv;
+    ImageView ivImage;
+    TextView tvTitelHeading,tvTitleSubHeading, tvDescrArabic, tvDescrTrans;
 
 
     public MyHolder(@NonNull View itemView) {
         super(itemView);
-        this.mImageIv = itemView.findViewById(R.id.modelImageIv);
-        this.mTitleTv = itemView.findViewById(R.id.heading);
-        this.mDescrTv = itemView.findViewById(R.id.modelDescrTv);
+        this.ivImage = itemView.findViewById(R.id.ivImage);
+        this.tvTitelHeading = itemView.findViewById(R.id.tvTitleHeading);
+        this.tvTitleSubHeading = itemView.findViewById(R.id.tvTitleSubHeading);
+        this.tvDescrArabic = itemView.findViewById(R.id.descrTextviewArabic);
+        this.tvDescrTrans = itemView.findViewById(R.id.descrTextviewTrans);
     }
 }

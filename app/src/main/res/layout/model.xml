@@ -17,41 +17,75 @@
 
 
         <ImageView
-            android:id="@+id/modelImageIv"
+            android:id="@+id/ivImage"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@color/primaryColorDark"/>
         <TextView
-            android:id="@+id/heading"
+            android:id="@+id/tvTitleHeading"
             style="@style/Base.TextAppearance.AppCompat.Title"
             android:text="Verse of the Day"
             android:textColor="@color/primaryColorDark"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_alignLeft="@+id/modelImageIv"
+            android:layout_alignLeft="@+id/ivImage"
             android:paddingLeft="50dp"/>
+        <ImageView
+            android:id="@+id/likeImageView"
+            android:layout_width="match_parent"
+            android:layout_alignRight="@+id/tvTitleHeading"
+            android:layout_height="25dp"
+            android:layout_marginLeft="150dp"
+            android:src="@drawable/bookmark1" />
+        <ImageView
+            android:id="@+id/shareImageView"
+            android:layout_width="match_parent"
+            android:layout_alignRight="@+id/likeImageView"
+            android:layout_height="25dp"
+            android:layout_marginLeft="250dp"
+            android:src="@drawable/shareicon" />
 
         <TextView
-            android:id="@+id/subHeading"
+            android:id="@+id/tvTitleSubHeading"
             style="@style/Base.TextAppearance.AppCompat.Caption"
             android:textSize="15sp"
             android:hint="Al-Anfal (8:61)"
-            android:layout_below="@id/heading"
+            android:layout_below="@id/tvTitleHeading"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:layout_alignLeft="@+id/modelImageIv"
+            android:layout_alignLeft="@+id/ivImage"
             android:paddingLeft="55dp"/>
 
-
+        <LinearLayout
+            android:layout_below="@id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <TextView
-            android:id="@+id/modelDescrTv"
+            android:id="@+id/descrTextviewArabic"
             android:text="Sample description...... "
             android:paddingTop="5dp"
             android:textColor="#000"
             android:textSize="18sp"
-            android:layout_below="@id/modelImageIv"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/descrTextviewTrans"
+                android:text="This is new sample description...... "
+                android:paddingTop="5dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
     </RelativeLayout>
 
 

@@ -149,32 +149,40 @@ public class ActivityHome extends AppCompatActivity {
     private ArrayList<Model> getPlayers () {
         ArrayList<Model> models = new ArrayList<>();
 
-        Model p = new Model();
-        p.setTitle(" Verse of the Day ");
-        p.setDiscription("This is the sample discription of the batteries. this can be log or multiple line discription" +
-                "An essay is generally a short piece of writing outlining the writer's perspective or story. " +
-                "It is often considered synonymous with a story or a paper or an article");
-        p.setImg(R.drawable.reading_quran);
-        models.add(p);
-
+        Model p;
 
         p = new Model();
-        p.setTitle("Dua of the Day");
-        p.setDiscription("this is the sample discription of the cpu. this can be log or multiple line discription");
+        p.setTitleHeading(" Verse of the Day ");
+        p.setTitleSubHeading(" Al-Mursalat- 77:44 ");
+        p.setDiscriptionAranic("إِنَّا كَذَلِكَ نَجْزِي الْمُحْسِنين");
+        p.setDiscriptionTrans("Thus, behold, do We reward the doers of good");
         p.setImg(R.drawable.reading_quran);
         models.add(p);
 
         p = new Model();
-        p.setTitle("Hadith of the day");
-        p.setDiscription("this is the sample discription of the display. this can be log or multiple line discription");
-        p.setImg(R.drawable.reading_quran);
+        p.setTitleHeading(" Dua of the day ");
+        p.setTitleSubHeading(" 3 ");
+        p.setDiscriptionAranic("الْحَمْدُ لِلَّهِ الَّذِي أَقَالَنَا يَوْمَنَا هَذَا وَلَمْ يُهْلِكْنَا بِذُنُوبِنَا (مُسْلِمْ)");
+        p.setDiscriptionTrans("All praise be to Allah who has forgiven us today and not destroyed us due to our sin.");
+        p.setImg(R.drawable.ic_dua_hands);
+        models.add(p);
+
+        p = new Model();
+        p.setTitleHeading("Hadith of the day");
+        p.setTitleSubHeading("Al-Mursalat-(77:44)");
+        p.setDiscriptionAranic("نَّمَا الْأَعْمَالُ بِالنِّيَّةِ وَإِنَّمَا لِامْرِئٍ مَا نَوَى فَمَنْ كَانَتْ هِجْرَتُهُ إِلَى اللَّهِ وَرَسُولِهِ فَهِجْرَتُهُ إِلَى اللَّهِ وَرَسُولِهِ وَمَنْ كَانَتْ هِجْرَتُهُ لِدُنْيَا يُصِيبُهَا أَوْ امْرَأَةٍ يَتَزَوَّجُهَا فَهِجْرَتُهُ إِلَى مَا هَاجَرَ إِلَيْهِ");
+        p.setDiscriptionTrans("Verily, deeds are only with intentions. Verily, every person will have only what they intended. Whoever emigrated to Allah and His Messenger, then his emigration is for Allah and His Messenger." +
+                " Whoever emigrated to get something in the world or to marry a woman, then his emigration is for whatever he emigrated for.");
+        p.setImg(R.drawable.kuran);
         models.add(p);
 
 
         p = new Model();
-        p.setTitle("Allah names");
-        p.setDiscription("this is the sample discription of the general. this can be log or multiple line discription");
-        p.setImg(R.drawable.reading_quran);
+        p.setTitleHeading("Allah names");
+        p.setTitleSubHeading("1");
+        p.setDiscriptionAranic("الرحمن");
+        p.setDiscriptionTrans("The Most Gracious");
+        p.setImg(R.drawable.namepaks);
         models.add(p);
 
 

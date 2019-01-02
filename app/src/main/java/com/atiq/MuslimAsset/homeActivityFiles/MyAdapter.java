@@ -36,9 +36,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
 
 
-        holder.mTitleTv.setText(models.get(position).getTitle());
-        holder.mDescrTv.setText(models.get(position).getDiscription());
-        holder.mImageIv.setImageResource(models.get(position).getImg());
+        holder.tvTitelHeading.setText(models.get(position).getTitleHeading());
+        holder.tvTitleSubHeading.setText(models.get(position).getTitleSubHeading());
+        holder.tvDescrArabic.setText(models.get(position).getDiscriptionAranic());
+        holder.tvDescrTrans.setText(models.get(position).getDiscriptionTrans());
+        holder.ivImage.setImageResource(models.get(position).getImg());
 
         //Animation
         Animation animation = AnimationUtils.loadAnimation(c, android.R.anim.slide_in_left);

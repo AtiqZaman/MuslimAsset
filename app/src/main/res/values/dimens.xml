@@ -17,4 +17,5 @@
 
     <dimen name="scroller">5dp</dimen>
     <dimen name="scrollerPadding">2dp</dimen>
+
 </resources>
