@@ -8,19 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Filter;
+import android.widget.Filterable;
 
 import com.atiq.MuslimAsset.R;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyHolder> implements Filterable {
 
     Context c;
-    ArrayList<Model> models;
+    ArrayList<Model> models, filterList;
+    CustomFilter filter;
 
     public MyAdapter(Context c, ArrayList<Model> models) {
         this.c = c;
         this.models = models;
+        this.filterList = models;
     }
 
     @NonNull
@@ -52,5 +56,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     @Override
     public int getItemCount() {
         return models.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+
+        if(filter == null){
+            filter =new CustomFilter(filterList, this);
+        }
+        return filter;
     }
 }
