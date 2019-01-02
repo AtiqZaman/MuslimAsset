@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:id="@+id/oneBlock"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_margin="7dp">
+
+
+        <ImageView
+            android:id="@+id/modelImageIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@color/primaryColorDark"/>
+        <TextView
+            android:id="@+id/heading"
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:text="Verse of the Day"
+            android:textColor="@color/primaryColorDark"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@+id/modelImageIv"
+            android:paddingLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/subHeading"
+            style="@style/Base.TextAppearance.AppCompat.Caption"
+            android:textSize="15sp"
+            android:hint="Al-Anfal (8:61)"
+            android:layout_below="@id/heading"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@+id/modelImageIv"
+            android:paddingLeft="55dp"/>
+
+
+        <TextView
+            android:id="@+id/modelDescrTv"
+            android:text="Sample description...... "
+            android:paddingTop="5dp"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:layout_below="@id/modelImageIv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+
+
+</android.support.v7.widget.CardView>
