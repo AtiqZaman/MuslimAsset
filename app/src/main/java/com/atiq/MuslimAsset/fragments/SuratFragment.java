@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.atiq.MuslimAsset.R;
-import com.atiq.MuslimAsset.mainActivities.AyatActivity;
+import com.atiq.MuslimAsset.mainActivityQuranFiles.AyatActivity;
 import com.atiq.MuslimAsset.adapter.SuratAdapter;
 import com.atiq.MuslimAsset.database.SuratDataSource;
 import com.atiq.MuslimAsset.intrface.OnItemClickListener;

@@ -1,4 +1,4 @@
-package com.atiq.MuslimAsset.mainActivities;
+package com.atiq.MuslimAsset;
 
 import android.app.FragmentManager;
 import android.content.Intent;
@@ -9,18 +9,14 @@ import android.preference.PreferenceManager;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.atiq.MuslimAsset.ActivityHadith;
-import com.atiq.MuslimAsset.ActivityHome;
-import com.atiq.MuslimAsset.ActivityMore;
-import com.atiq.MuslimAsset.ActivityPrayer;
-import com.atiq.MuslimAsset.BottomNavigationViewHelper;
-import com.atiq.MuslimAsset.R;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 
 import com.atiq.MuslimAsset.database.DatabaseHelper;
@@ -106,6 +102,10 @@ public class MainActivityQuran extends AppCompatActivity {
                 .commit();
 
 
+
+
+
+
     }
 
     @Override
@@ -142,5 +142,46 @@ public class MainActivityQuran extends AppCompatActivity {
 
 
     }
+
+
+
+
+    // SearcView and setting view code starts
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        MenuItem item = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                //called when you clik search
+                //myAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //called whenever you type word in search view
+                //myAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id==R.id.action_settings){
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT ).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    // SearcView and setting view code End
 
 }

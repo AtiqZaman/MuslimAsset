@@ -10,17 +10,17 @@
         android:theme="@style/AppTheme.Mushaf">
 
         <activity
-            android:name="com.atiq.MuslimAsset.mainActivities.MainActivityQuran"
+            android:name="com.atiq.MuslimAsset.MainActivityQuran"
             android:label="@string/nameTopBarQuran">
 
         </activity>
 
         <activity
-            android:name="com.atiq.MuslimAsset.mainActivities.AyatActivity"
-            android:parentActivityName="com.atiq.MuslimAsset.mainActivities.MainActivityQuran">
+            android:name="com.atiq.MuslimAsset.mainActivityQuranFiles.AyatActivity"
+            android:parentActivityName="com.atiq.MuslimAsset.MainActivityQuran">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.atiq.MuslimAsset.mainActivities.MainActivityQuran" />
+                android:value="com.atiq.MuslimAsset.MainActivityQuran" />
         </activity>
 
 

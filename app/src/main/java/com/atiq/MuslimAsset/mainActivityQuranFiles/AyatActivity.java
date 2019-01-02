@@ -1,4 +1,4 @@
-package com.atiq.MuslimAsset.mainActivities;
+package com.atiq.MuslimAsset.mainActivityQuranFiles;
 
 import android.app.FragmentManager;
 import android.os.Bundle;

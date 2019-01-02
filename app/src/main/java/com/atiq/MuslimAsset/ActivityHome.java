@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import com.atiq.MuslimAsset.homeActivityFiles.Model;
 import com.atiq.MuslimAsset.homeActivityFiles.MyAdapter;
-import com.atiq.MuslimAsset.mainActivities.MainActivityQuran;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -192,6 +191,7 @@ public class ActivityHome extends AppCompatActivity {
     }
 
 
+    // SearcView and setting view code starts
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -226,4 +226,6 @@ public class ActivityHome extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    // SearcView and setting view code End
 }

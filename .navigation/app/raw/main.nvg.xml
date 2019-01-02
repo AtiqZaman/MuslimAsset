@@ -4,22 +4,22 @@
     <locations class="java.util.ArrayList">
         <statePointEntry>
             <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
-                className="com.atiq.MuslimAsset.mainActivities.AyatActivity" />
+                className="com.atiq.MuslimAsset.mainActivityQuranFiles.AyatActivity" />
             <point x="1212" y="168" />
         </statePointEntry>
         <statePointEntry>
             <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
-                className="com.atiq.MuslimAsset.mainActivities.SettingsActivity" />
+                className="com.atiq.MuslimAsset.mainActivityQuranFiles.SettingsActivity" />
             <point x="304" y="564" />
         </statePointEntry>
         <statePointEntry>
             <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
-                className="com.atiq.MuslimAsset.mainActivities.MainActivityQuran" />
+                className="com.atiq.MuslimAsset.MainActivityQuran" />
             <point x="1312" y="300" />
         </statePointEntry>
         <statePointEntry>
             <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
-                className="com.atiq.MuslimAsset.mainActivities.TafsirActivity" />
+                className="com.atiq.MuslimAsset.mainActivityQuranFiles.TafsirActivity" />
             <point x="172" y="112" />
         </statePointEntry>
 

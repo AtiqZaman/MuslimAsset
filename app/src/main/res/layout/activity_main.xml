@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mainActivities.MainActivityQuran">
+    tools:context=".MainActivityQuran">
 
 
     <RelativeLayout
@@ -51,7 +51,7 @@
             android:orientation="vertical"
             android:layout_above="@+id/relLayoutBotBar"
             android:layout_below="@+id/relLayoutTopBar"
-            tools:context=".mainActivities.MainActivity">
+            tools:context=".mainActivityQuranFiles.MainActivity">
 
 
 

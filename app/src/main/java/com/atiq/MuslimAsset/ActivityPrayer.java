@@ -11,8 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.atiq.MuslimAsset.mainActivities.MainActivityQuran;
-
 public class ActivityPrayer extends AppCompatActivity {
 
     @Override
