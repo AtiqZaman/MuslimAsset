@@ -30,7 +30,7 @@ public class ActivityPrayer extends AppCompatActivity {
 
     private static final String TAG = "tag";
     //url
-    String url;
+    String url = "http://muslimsalat.com/mianwali.json?key=84260ed261bdbd456a62718944fdd125";;
 
     // Tag used to cancel the request
     String tag_json_obj = "json_obj_req";
@@ -85,6 +85,68 @@ public class ActivityPrayer extends AppCompatActivity {
             }
         });
 
+        pDialog = new ProgressDialog(this);
+        pDialog.setMessage("Loading...");
+        pDialog.show();
+
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
+                url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //Log.d(TAG, response.toString());
+                        //Toast.makeText(ActivityPrayer.this, response.toString(), Toast.LENGTH_SHORT).show();
+
+                        //get data from json
+                        try {
+                            //get Location
+                            String  country   = response.get("country").toString();
+                            String  state     = response.get("state").toString();
+                            String  city      = response.get("city").toString();
+                            String  location  = country +", "+ state +", "+city;
+
+                            //get date
+                            String date = response.getJSONArray("items").getJSONObject(0).get("date_for").toString();
+
+
+                            //get Namaz Timing
+                            String mFajar = response.getJSONArray("items").getJSONObject(0).get("fajr").toString();
+                            String mZuhr = response.getJSONArray("items").getJSONObject(0).get("dhuhr").toString();
+                            String mAsar = response.getJSONArray("items").getJSONObject(0).get("asr").toString();
+                            String mMagrib = response.getJSONArray("items").getJSONObject(0).get("maghrib").toString();
+                            String mIsha = response.getJSONArray("items").getJSONObject(0).get("isha").toString();
+
+                            //Set this dat to textview
+                            mFajarTv.setText(mFajar);
+                            mZuharTv.setText(mZuhr);
+                            mAsarTv.setText(mAsar);
+                            mMagribTv.setText(mMagrib);
+                            mIshaTv.setText(mIsha);
+                            mLocationTv.setText(location);
+                            mDateTv.setText(date);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        pDialog.hide();
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                Toast.makeText(ActivityPrayer.this, "Error", Toast.LENGTH_SHORT).show();
+                // hide the progress dialog
+                pDialog.hide();
+            }
+        });
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
 
         //End Prayers timing code
 
