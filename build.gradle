@@ -2,7 +2,10 @@
 
 buildscript {
     repositories {
-        jcenter()
+        jcenter {
+            //Default one is HTTPS
+            url "http://jcenter.bintray.com/"
+        }
         maven {
             url 'https://maven.google.com/'
             name 'Google'
@@ -20,10 +23,17 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        jcenter {
+            //Default one is HTTPS
+            url "http://jcenter.bintray.com/"
+        }
         maven {
             url 'https://maven.google.com/'
             name 'Google'
         }
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }

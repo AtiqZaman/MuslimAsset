@@ -23,12 +23,12 @@ public class ActivityHadith extends AppCompatActivity {
         setTitle("Hadith");
 
 
-        TextView title = (TextView) findViewById(R.id.hadithActivity);
+        TextView title = findViewById(R.id.hadithActivity);
         title.setText("This is Hadith Activity");
 
 
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);

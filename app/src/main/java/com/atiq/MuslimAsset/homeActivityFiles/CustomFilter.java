@@ -42,9 +42,9 @@ public class CustomFilter extends Filter {
     }
 
     @Override
-    protected void publishResults(CharSequence constraint, FilterResults results) {
+    protected void publishResults(CharSequence charSequence, FilterResults results) {
 
-        adapter.models =  (ArrayList<Model>) results.values;
+        adapter.models = (ArrayList<Model>) results.values;
 
         //refreash
         adapter.notifyDataSetChanged();

@@ -23,11 +23,11 @@ public class ActivityPrayer extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("Prayers");
 
-        TextView title = (TextView) findViewById(R.id.prayerActivity);
+        TextView title = findViewById(R.id.prayerActivity);
         title.setText("This is Prayers Activity ");
 
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
         Menu menu = bottomNavigationView.getMenu();

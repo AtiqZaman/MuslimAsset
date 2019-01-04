@@ -54,7 +54,7 @@ public class ActivityHome extends AppCompatActivity {
 
         // start random background images
 
-        topWidgetLayout = (RelativeLayout) findViewById(R.id.topwidgetlayout);
+        topWidgetLayout = findViewById(R.id.topwidgetlayout);
 
         Timer timerBackgroundImage = new Timer();
         MyTimer mt = new MyTimer();
@@ -80,7 +80,7 @@ public class ActivityHome extends AppCompatActivity {
         //End recyclerview with card
 
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(2);

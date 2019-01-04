@@ -2,57 +2,63 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.atiq.MuslimAsset">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
-        android:name="com.atiq.MuslimAsset.App"
+        android:name=".App"
+        android:label="@string/app_name"
         android:allowBackup="true"
+        android:supportsRtl="true"
         android:configChanges="keyboardHidden|orientation|screenSize"
         android:fullBackupContent="false"
         android:theme="@style/AppTheme.Mushaf">
-
         <activity
-            android:name="com.atiq.MuslimAsset.MainActivityQuran"
-            android:label="@string/nameTopBarQuran">
-
-        </activity>
-
+            android:name=".MainActivityQuran"
+            android:label="@string/nameTopBarQuran"></activity>
         <activity
-            android:name="com.atiq.MuslimAsset.mainActivityQuranFiles.AyatActivity"
-            android:parentActivityName="com.atiq.MuslimAsset.MainActivityQuran">
+            android:name=".mainActivityQuranFiles.AyatActivity"
+            android:parentActivityName=".MainActivityQuran">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.atiq.MuslimAsset.MainActivityQuran" />
         </activity>
-
-
-
         <activity
             android:name=".ActivityHome"
-            android:label="@string/nameTopBarHome">
+            android:label="MuslimAsset">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivityHadith"
+            android:label="@string/nameTopBarHadith"></activity>
+        <activity
+            android:name=".ActivityPrayer"
+            android:label="@string/nameTopBarPryers"></activity>
+        <activity
+            android:name=".ActivityMore"
+            android:label="@string/more">
 
         </activity>
 
         <activity
-            android:name=".ActivityHadith"
-            android:label="@string/nameTopBarHadith">
+            android:name=".ProfileActivity"
+            android:label="Profile">
 
         </activity>
 
-        <activity android:name=".ActivityPrayer"
-            android:label="@string/nameTopBarPryers">
+        <activity
+            android:name=".LoginActivity"
+            android:label="LoginActivity">
 
         </activity>
-
-        <activity android:name=".ActivityMore"
-            android:label="@string/nameTopBarMore">
-
-        </activity>
-
-
 
 
     </application>
