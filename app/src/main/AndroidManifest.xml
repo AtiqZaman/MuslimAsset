@@ -10,8 +10,10 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
-        android:name=".App"
+
+        android:name=".prayersActivityFiles.AppController"
         android:label="@string/app_name"
+
         android:allowBackup="true"
         android:supportsRtl="true"
         android:configChanges="keyboardHidden|orientation|screenSize"
