@@ -39,16 +39,11 @@ public class ActivityHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Home");
 
-
-        // start hijri data
-
-        // end hojri data
-
+        //Clock on HomeActiviy
         findViewById(R.id.digitalClock);
 
 
@@ -64,7 +59,7 @@ public class ActivityHome extends AppCompatActivity {
         // End background random images
 
 
-        //Start recyclerview with card code
+        //Start code of recyclerview with card
 
         //recyclerview
         mRecyclerView = findViewById(R.id.recycler_view);
@@ -77,9 +72,11 @@ public class ActivityHome extends AppCompatActivity {
         myAdapter = new MyAdapter(this, getPlayers());
         mRecyclerView.setAdapter(myAdapter);
 
-        //End recyclerview with card
+        //End code of recyclerview with card
 
 
+
+        //starts code of Bottom Navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
@@ -116,6 +113,8 @@ public class ActivityHome extends AppCompatActivity {
                 return false;
             }
         });
+
+        //Ends code of Bottom Navigation
 
     }
 
@@ -191,7 +190,7 @@ public class ActivityHome extends AppCompatActivity {
     }
 
 
-    // SearcView and setting view code starts
+    // Start SearcView and setting view code
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);

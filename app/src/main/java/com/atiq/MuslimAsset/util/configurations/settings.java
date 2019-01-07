@@ -25,14 +25,13 @@ public class settings {
     final public static String defaultLang = "en";
     final public static boolean defaultShowTranslation = true;
 
-    final public static String defaultArabicFont = "PDMS_IslamicFont.ttf";
+
     final public static String defaultFontSizeArabic = "30";
     final public static String defaultFontSizeTranslation = "14";
 
-    // public String lang;
+
     public boolean rtl;
 
-    public String fontArabic;
     public String fontSizeArabic;
 
 
@@ -42,7 +41,7 @@ public class settings {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         try {
             loadDefault();
-            fontArabic = sp.getString(settings.ARABIC_FONT, settings.defaultArabicFont);
+
             fontSizeArabic = sp.getString(settings.FONT_SIZE_ARABIC, settings.defaultFontSizeArabic);
             Log.d("settings", "Loading Custom");
 
@@ -53,7 +52,7 @@ public class settings {
     }
 
     public void loadDefault() {
-        fontArabic = defaultArabicFont;
+
         fontSizeArabic = defaultFontSizeArabic;
 
     }

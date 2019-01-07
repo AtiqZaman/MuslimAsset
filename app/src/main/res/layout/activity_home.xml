@@ -50,7 +50,7 @@
 
         </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/recyclerViewCards"
             android:layout_below="@id/topwidgetlayout"
             android:orientation="vertical"
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content">
 
             </android.support.v7.widget.RecyclerView>
-        </LinearLayout>
+        </RelativeLayout>
 
 
 

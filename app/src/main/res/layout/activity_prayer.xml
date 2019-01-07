@@ -106,7 +106,7 @@
                             android:text="myLocation"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/textColor"
+                            android:textColor="@color/primaryTextColor"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -130,7 +130,7 @@
                             android:text="myDate"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/textColor"
+                            android:textColor="@color/primaryTextColor"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -164,7 +164,7 @@
                             android:text="Fajar"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/textColor"
+                            android:textColor="@color/primaryTextColor"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -188,7 +188,7 @@
                             android:text="Zuhar"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/textColor"
+                            android:textColor="@color/primaryTextColor"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -213,7 +213,7 @@
                             android:text="Asar"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/textColor"
+                            android:textColor="@color/primaryTextColor"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -237,7 +237,7 @@
                             android:text="Magrib"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/textColor"
+                            android:textColor="@color/primaryTextColor"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -261,7 +261,7 @@
                             android:text="Isha"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/textColor"
+                            android:textColor="@color/primaryTextColor"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
