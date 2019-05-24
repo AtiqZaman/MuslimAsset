@@ -12,8 +12,8 @@ public class DatabaseHelper extends SQLiteAssetHelper {
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        this.setForcedUpgrade(); //just because it is read only database so ForceUpgrade change or remove it is not read only
-        Log.d("DatabaseHelper  ", "constructor");
+        this.setForcedUpgrade();
+        Log.d("Helper Database  ", "constructor");
     }
 
 }

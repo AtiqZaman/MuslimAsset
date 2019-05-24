@@ -24,7 +24,7 @@ public class AyatActivity extends AppCompatActivity {
 
 
         Bundle bundle = this.getIntent().getExtras();
-        surahName = bundle.getString(SuratDataSource.SURAH_NAME_TRANSLATE);
+        surahName = bundle.getString(SuratDataSource.suratNameTrans);
         getSupportActionBar().setTitle(surahName);
 
         if (savedInstanceState == null) {

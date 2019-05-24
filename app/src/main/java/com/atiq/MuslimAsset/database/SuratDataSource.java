@@ -12,16 +12,16 @@ import java.util.ArrayList;
 public class SuratDataSource {
 
 
-    public final static String SURAH_ID = "_id";
-    public final static String SURAH_ID_TAG = "surah_id";
+    public final static String suratID = "_id";
+    public final static String suratIDtag = "surah_id";
 
-    public final static String SURAH_NAME_ARABIC = "name_arabic";
-    public final static String SURAH_NAME_ENGLISH = "name_english";
-    public final static String SURAH_NAME_TRANSLATE = "name_translate";
+    public final static String suratNameArabic = "name_arabic";
+    public final static String suratNameEng = "name_english";
+    public final static String suratNameTrans = "name_translate";
 
 
 
-    public final static String SURAH_AYAH_NUMBER = "ayah_number";
+    public final static String suratAyahNumber = "ayah_number";
 
     private static Cursor cursor;
     private DatabaseHelper databaseHelper;
@@ -39,10 +39,10 @@ public class SuratDataSource {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             Surat surat = new Surat();
-            surat.setId(cursor.getLong(cursor.getColumnIndex(SURAH_ID)));
-            surat.setNameArabic(cursor.getString(cursor.getColumnIndex(SURAH_NAME_ARABIC)));
-            surat.setNameTranslate(cursor.getString(cursor.getColumnIndex(SURAH_NAME_ENGLISH)));
-            surat.setAyahNumber(cursor.getLong(cursor.getColumnIndex(SURAH_AYAH_NUMBER)));
+            surat.setId(cursor.getLong(cursor.getColumnIndex(suratID)));
+            surat.setNameArabic(cursor.getString(cursor.getColumnIndex(suratNameArabic)));
+            surat.setNameTranslate(cursor.getString(cursor.getColumnIndex(suratNameEng)));
+            surat.setAyahNumber(cursor.getLong(cursor.getColumnIndex(suratAyahNumber)));
             suratArrayList.add(surat);
             cursor.moveToNext();
 

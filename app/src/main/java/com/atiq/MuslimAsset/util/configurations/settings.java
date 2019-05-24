@@ -10,20 +10,20 @@ public class settings {
 
 
 
-    final public static String LANG = "lang";
+    final public static String language = "lang";
 
-    final public static String LANG_EN = "en";
+    final public static String english_laguage = "en";
 
-    final public static String SHOW_TRANSLATION = "showTranslation";
+    final public static String display_translation = "displayTranslation";
 
-    final public static String ARABIC_FONT = "arabicFont";
-    final public static String FONT_SIZE_ARABIC = "fontSizeArabic";
-    final public static String FONT_SIZE_TRANSLATION = "fontSizeTranslation";
 
-    final public static String DATABASE_VERSION = "dbVersion";
+    final public static String arabicFontSize = "fontSizeArabic";
+    final public static String translationFontSize = "fontSizeTranslation";
 
-    final public static String defaultLang = "en";
-    final public static boolean defaultShowTranslation = true;
+    final public static String db_version = "dbVersion";
+
+    final public static String defualtLanguage = "en";
+    final public static boolean defualtShowTrnslation = true;
 
 
     final public static String defaultFontSizeArabic = "30";
@@ -42,7 +42,7 @@ public class settings {
         try {
             loadDefault();
 
-            fontSizeArabic = sp.getString(settings.FONT_SIZE_ARABIC, settings.defaultFontSizeArabic);
+            fontSizeArabic = sp.getString(settings.arabicFontSize, settings.defaultFontSizeArabic);
             Log.d("settings", "Loading Custom");
 
         } catch (Exception e) {

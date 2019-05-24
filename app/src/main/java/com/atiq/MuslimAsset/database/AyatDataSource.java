@@ -10,18 +10,19 @@ import java.util.ArrayList;
 
 public class AyatDataSource {
 
-    public final static String AYAHWORD_WORDS_TRANSLATE_EN = "translate_en";
+    public final static String translate_EN = "translate_en";
 
-    public final static String AYAHWORD_VERSE_ID = "verse_id";
-    public final static String AYAHWORD_WORDS_ID = "words_id";
-    public final static String AYAHWORD_WORDS_AR = "words_ar";
+    public final static String ayatVerse_ID = "verse_id";
+    public final static String ayatWords_ID = "words_id";
+    public final static String ayatWords_AR = "words_ar";
 
-    public final static String QURAN_ENGLSIH = "english";
-    private final static String QURAN_VERSE_ID = "verse_id";
+    public final static String QuranEnglish = "english";
+    private final static String QuranVerseID = "verse_id";
 
 
     private static Cursor cursor;
     private static Cursor quranCursor;
+
 
 
     private DatabaseHelper databaseHelper;
@@ -31,7 +32,7 @@ public class AyatDataSource {
         databaseHelper = new DatabaseHelper(context);
     }
 
-    public ArrayList<Ayat> getEnglishAyahWordsBySurah(long surah_id, long ayah_number)
+    public ArrayList<Ayat> getEnglishAyatWordsBySurah(long surah_id, long ayatNumber)
 
     {
         long tempVerseWord;
@@ -48,7 +49,7 @@ public class AyatDataSource {
 
         // while (!cursor.isAfterLast()) {
 
-        for (long i = 1; i <= ayah_number; i++) {
+        for (long i = 1; i <= ayatNumber; i++) {
 
             tempVerseWord = i;
             tempVerseQuran = i;
@@ -58,16 +59,16 @@ public class AyatDataSource {
 
             while (i == tempVerseWord && !cursor.isAfterLast()) {
 
-                tempVerseWord = cursor.getLong(cursor.getColumnIndex(AYAHWORD_VERSE_ID));
+                tempVerseWord = cursor.getLong(cursor.getColumnIndex(ayatVerse_ID));
                 if (tempVerseWord != i) {
                     continue;
                 }
                 Word word = new Word();
 
-                word.setVerseId(cursor.getLong(cursor.getColumnIndex(AYAHWORD_VERSE_ID)));
-                word.setWordsId(cursor.getLong(cursor.getColumnIndex(AYAHWORD_WORDS_ID)));
-                word.setWordsAr(cursor.getString(cursor.getColumnIndex(AYAHWORD_WORDS_AR)));
-                word.setTranslate(cursor.getString(cursor.getColumnIndex(AYAHWORD_WORDS_TRANSLATE_EN)));
+                word.setVerseId(cursor.getLong(cursor.getColumnIndex(ayatVerse_ID)));
+                word.setWordsId(cursor.getLong(cursor.getColumnIndex(ayatWords_ID)));
+                word.setWordsAr(cursor.getString(cursor.getColumnIndex(ayatWords_AR)));
+                word.setTranslate(cursor.getString(cursor.getColumnIndex(translate_EN)));
 
                 wordArrayList.add(word);
                 cursor.moveToNext();
@@ -75,13 +76,13 @@ public class AyatDataSource {
 
 
             while (i == tempVerseQuran && !quranCursor.isAfterLast()) {
-                tempVerseQuran = quranCursor.getLong(quranCursor.getColumnIndex(QURAN_VERSE_ID));
+                tempVerseQuran = quranCursor.getLong(quranCursor.getColumnIndex(QuranVerseID));
                 if (tempVerseQuran != i) {
                     continue;
                 }
-                ayat.setQuranVerseId(quranCursor.getLong(quranCursor.getColumnIndex(QURAN_VERSE_ID)));
+                ayat.setQuranVerseId(quranCursor.getLong(quranCursor.getColumnIndex(QuranVerseID)));
 
-                ayat.setQuranTranslate(quranCursor.getString(quranCursor.getColumnIndex(QURAN_ENGLSIH)));
+                ayat.setQuranTranslate(quranCursor.getString(quranCursor.getColumnIndex(QuranEnglish)));
 
                 quranCursor.moveToNext();
 

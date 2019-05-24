@@ -9,7 +9,6 @@ import android.preference.PreferenceManager;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -93,7 +92,7 @@ public class MainActivityQuran extends AppCompatActivity {
         dbVersPreferences = getSharedPreferences(getPackageName(), MODE_PRIVATE);
 
 
-        language = sharedPreferences.getString(settings.LANG, settings.defaultLang);
+        language = sharedPreferences.getString(settings.language, settings.defualtLanguage);
         setEnglish();
 
         FragmentManager fragmentManager = getFragmentManager();
@@ -111,7 +110,7 @@ public class MainActivityQuran extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (DatabaseHelper.DATABASE_VERSION > dbVersPreferences.getInt(settings.DATABASE_VERSION, 0)) {
+        if (DatabaseHelper.DATABASE_VERSION > dbVersPreferences.getInt(settings.db_version, 0)) {
             Log.d("MyActivity onResume()", "First Run or dbUpgrade");
             {
 
@@ -124,7 +123,7 @@ public class MainActivityQuran extends AppCompatActivity {
 
 
     public void setEnglish() {
-        Locale locale = new Locale(settings.LANG_EN);
+        Locale locale = new Locale(settings.english_laguage);
         Locale.setDefault(locale);
 
     }

@@ -47,7 +47,7 @@ public class SuratFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        lang = sp.getString(settings.LANG, settings.defaultLang);
+        lang = sp.getString(settings.language, settings.defualtLanguage);
         suratArrayList = getSuratArrayList();
     }
 
@@ -87,9 +87,9 @@ public class SuratFragment extends Fragment {
                 Log.d("SuratFragment", "ID: " + surah_id + " Surat Name: " + surah_name);
 
                 Bundle dataBundle = new Bundle();
-                dataBundle.putLong(SuratDataSource.SURAH_ID_TAG, surah_id);
-                dataBundle.putLong(SuratDataSource.SURAH_AYAH_NUMBER, ayah_number);
-                dataBundle.putString(SuratDataSource.SURAH_NAME_TRANSLATE, surah_name);
+                dataBundle.putLong(SuratDataSource.suratIDtag, surah_id);
+                dataBundle.putLong(SuratDataSource.suratAyahNumber, ayah_number);
+                dataBundle.putString(SuratDataSource.suratNameTrans, surah_name);
 
                 Intent intent = new Intent(getActivity(), AyatActivity.class);
                 intent.putExtras(dataBundle);
@@ -109,7 +109,7 @@ public class SuratFragment extends Fragment {
 
         switch (lang) {
 
-            case settings.LANG_EN:
+            case settings.english_laguage:
                 suratArrayList = suratDataSource.getEnglishSurahArrayList();
                 break;
         }

@@ -51,9 +51,9 @@ public class AyatFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        lang = sp.getString(settings.LANG, settings.defaultLang);
-        surah_id = getArguments().getLong(SuratDataSource.SURAH_ID_TAG);
-        ayah_number = getArguments().getLong(SuratDataSource.SURAH_AYAH_NUMBER);
+        lang = sp.getString(settings.language, settings.defualtLanguage);
+        surah_id = getArguments().getLong(SuratDataSource.suratIDtag);
+        ayah_number = getArguments().getLong(SuratDataSource.suratAyahNumber);
         ayatArrayList = getAyahWordsBySurah(surah_id, ayah_number);
 
     }
@@ -109,8 +109,8 @@ public class AyatFragment extends Fragment {
 
         switch (lang) {
 
-            case settings.LANG_EN:
-                ayatArrayList = ayatDataSource.getEnglishAyahWordsBySurah(surah_id, ayah_number);
+            case settings.english_laguage:
+                ayatArrayList = ayatDataSource.getEnglishAyatWordsBySurah(surah_id, ayah_number);
                 break;
         }
 
