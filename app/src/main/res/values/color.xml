@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#43A047</color>
-    <color name="primaryColorDark">#388E3C</color>
-    <color name="accentColor">#FFC107</color>
-    <color name="dividerColor">#B6B6B6</color>
-    <color name="lightPrimaryColor">#B6B6B6</color>
+    <color name="primaryColor">#64dd17</color>
+    <color name="primaryColorDark">#1faa00</color>
+    <color name="lightPrimaryColor">#9cff57</color>
+    <color name="accentColor">#09af00</color>
+    <color name="dividerColor">#41c300</color>
+
+    <color name="seondaryColor">#ab47bc</color>
+    <color name="secondaryColorLight">#df78ef</color>
+    <color name="secondaryColorDark">#790e8b</color>
+
+
     <color name="primaryTextColor">#212121</color>
     <color name="secondaryTextColor">#727272</color>
-    <color name="colorWhite">#fff</color>
+    <color name="colorWhite">#ffffff</color>
     <color name="colorGray">#c3c3c3</color>
     <color name="textColor">#d35400</color>
 
-    <color name="mushaf2">#eeeade</color>
-    <color name="mushaf3">#ede6d3</color>
-    <color name="mushaf4">#ddcca2</color>
-    <color name="mushaf5">#dcd69c</color>
+    <color name="windowBackgroundColor">#faebd7</color>
+    <color name="mushaf3">#defabb</color>
 
 </resources>

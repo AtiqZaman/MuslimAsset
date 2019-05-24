@@ -9,13 +9,12 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertNotNull;
-import static org.junit.Assert.*;
 
-public class ActivityHadithTest {
+public class ActivityAccountTest {
 
     @Rule
-    public ActivityTestRule<ActivityHadith> mActivityTestRule=new ActivityTestRule<>(ActivityHadith.class);
-    private ActivityHadith myActivity;
+    public ActivityTestRule<ActivityAccount> mActivityTestRule=new ActivityTestRule<>(ActivityAccount.class);
+    private ActivityAccount myActivity;
 
     @Before
     public void setUp() throws Exception {
@@ -24,7 +23,7 @@ public class ActivityHadithTest {
 
     @Test
     public void testActivity(){
-        View v = myActivity.findViewById(R.id.recycler_view);
+        View v = myActivity.findViewById(R.id.buttonSignup);
         assertNotNull(v);
     }
 

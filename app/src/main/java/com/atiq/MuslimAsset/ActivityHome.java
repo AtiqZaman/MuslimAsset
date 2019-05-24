@@ -39,6 +39,8 @@ public class ActivityHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Home");
@@ -105,7 +107,7 @@ public class ActivityHome extends AppCompatActivity {
                         startActivity(intent4);
                         break;
                     case R.id.ic_more:
-                        Intent intent5 = new Intent(ActivityHome.this,ActivityMore.class);
+                        Intent intent5 = new Intent(ActivityHome.this, ActivityAccount.class);
                         startActivity(intent5);
                         break;
                 }
@@ -189,13 +191,12 @@ public class ActivityHome extends AppCompatActivity {
         return models;
     }
 
-
-    // Start SearcView and setting view code
+    // SearcView and setting view code starts
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem item = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        SearchView searchView = (SearchView) item.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -227,4 +228,5 @@ public class ActivityHome extends AppCompatActivity {
     }
 
     // SearcView and setting view code End
+
 }

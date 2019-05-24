@@ -73,7 +73,7 @@ public class MainActivityQuran extends AppCompatActivity {
                         startActivity(intent4);
                         break;
                     case R.id.ic_more:
-                        Intent intent5 = new Intent(MainActivityQuran.this,ActivityMore.class);
+                        Intent intent5 = new Intent(MainActivityQuran.this, ActivityAccount.class);
                         startActivity(intent5);
                         break;
                 }
@@ -151,7 +151,7 @@ public class MainActivityQuran extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem item = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        SearchView searchView = (SearchView) item.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

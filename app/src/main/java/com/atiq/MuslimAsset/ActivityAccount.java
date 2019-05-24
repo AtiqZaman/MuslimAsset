@@ -22,7 +22,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class ActivityMore extends AppCompatActivity implements View.OnClickListener{
+public class ActivityAccount extends AppCompatActivity implements View.OnClickListener{
 
 
     //defining view objects
@@ -43,7 +43,7 @@ public class ActivityMore extends AppCompatActivity implements View.OnClickListe
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("More");
+        setTitle("Account");
 
 
         // Firebase Login Signup
@@ -93,19 +93,19 @@ public class ActivityMore extends AppCompatActivity implements View.OnClickListe
 
                 switch (menuItem.getItemId()){
                     case R.id.ic_quran:
-                        Intent intent1 = new Intent(ActivityMore.this,MainActivityQuran.class);
+                        Intent intent1 = new Intent(ActivityAccount.this,MainActivityQuran.class);
                         startActivity(intent1);
                         break;
                     case R.id.ic_hadith:
-                        Intent intent2 = new Intent(ActivityMore.this,MainActivityQuran.class);
+                        Intent intent2 = new Intent(ActivityAccount.this,ActivityHadith.class);
                         startActivity(intent2);
                         break;
                     case R.id.ic_home:
-                        Intent intent3 = new Intent(ActivityMore.this,ActivityHome.class);
+                        Intent intent3 = new Intent(ActivityAccount.this,ActivityHome.class);
                         startActivity(intent3);
                         break;
                     case R.id.ic_prayers:
-                        Intent intent4 = new Intent(ActivityMore.this,ActivityPrayer.class);
+                        Intent intent4 = new Intent(ActivityAccount.this,ActivityPrayer.class);
                         startActivity(intent4);
                         break;
                     case R.id.ic_more:
@@ -156,7 +156,7 @@ public class ActivityMore extends AppCompatActivity implements View.OnClickListe
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         }else{
                             //display some message here
-                            Toast.makeText(ActivityMore.this,"Registration Error",Toast.LENGTH_LONG).show();
+                            Toast.makeText(ActivityAccount.this,"Registration Error",Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }

@@ -30,7 +30,7 @@ public class ActivityPrayer extends AppCompatActivity {
 
     private static final String TAG = "tag";
     //url
-    String url = "http://muslimsalat.com/mianwali.json?key=84260ed261bdbd456a62718944fdd125";;
+    String url = "http://muslimsalat.com/mianwali.json?key=84260ed261bdbd456a62718944fdd125";
 
     // Tag used to cancel the request
     String tag_json_obj = "json_obj_req";
@@ -49,6 +49,8 @@ public class ActivityPrayer extends AppCompatActivity {
         setContentView(R.layout.activity_prayer);
 
 
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Prayers");
@@ -56,15 +58,15 @@ public class ActivityPrayer extends AppCompatActivity {
 
         //Starts Prayers timing code
 
-        mFajarTv    = findViewById(R.id.fajarTv);
-        mZuharTv    = findViewById(R.id.zuharTv);
-        mAsarTv     = findViewById(R.id.asarTv);
-        mMagribTv   = findViewById(R.id.magribTv);
-        mIshaTv     = findViewById(R.id.ishaTv);
+        mFajarTv = findViewById(R.id.fajarTv);
+        mZuharTv = findViewById(R.id.zuharTv);
+        mAsarTv = findViewById(R.id.asarTv);
+        mMagribTv = findViewById(R.id.magribTv);
+        mIshaTv = findViewById(R.id.ishaTv);
         mLocationTv = findViewById(R.id.locationTv);
-        mDateTv     = findViewById(R.id.dateTv);
-        mSearchEt   = findViewById(R.id.searchEt);
-        mSearchBtn  = findViewById(R.id.searchBtn);
+        mDateTv = findViewById(R.id.dateTv);
+        mSearchEt = findViewById(R.id.searchEt);
+        mSearchBtn = findViewById(R.id.searchBtn);
 
         //handle Button click
         mSearchBtn.setOnClickListener(new View.OnClickListener() {
@@ -74,11 +76,10 @@ public class ActivityPrayer extends AppCompatActivity {
                 String mLocation = mSearchEt.getText().toString().trim();
 
                 //validate if it is null or not
-                if(mLocation.isEmpty()){
+                if (mLocation.isEmpty()) {
                     Toast.makeText(ActivityPrayer.this, "Please Enter Location", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    url = "http://muslimsalat.com/"+mLocation+".json?key=84260ed261bdbd456a62718944fdd125";
+                } else {
+                    url = "http://muslimsalat.com/" + mLocation + ".json?key=84260ed261bdbd456a62718944fdd125";
                     //This function will get location
                     searchlocation();
                 }
@@ -102,10 +103,10 @@ public class ActivityPrayer extends AppCompatActivity {
                         //get data from json
                         try {
                             //get Location
-                            String  country   = response.get("country").toString();
-                            String  state     = response.get("state").toString();
-                            String  city      = response.get("city").toString();
-                            String  location  = country +", "+ state +", "+city;
+                            String country = response.get("country").toString();
+                            String state = response.get("state").toString();
+                            String city = response.get("city").toString();
+                            String location = country + ", " + state + ", " + city;
 
                             //get date
                             String date = response.getJSONArray("items").getJSONObject(0).get("date_for").toString();
@@ -151,8 +152,6 @@ public class ActivityPrayer extends AppCompatActivity {
         //End Prayers timing code
 
 
-
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
@@ -164,24 +163,24 @@ public class ActivityPrayer extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.ic_quran:
-                        Intent intent1 = new Intent(ActivityPrayer.this,MainActivityQuran.class);
+                        Intent intent1 = new Intent(ActivityPrayer.this, MainActivityQuran.class);
                         startActivity(intent1);
                         break;
                     case R.id.ic_hadith:
-                        Intent intent2 = new Intent(ActivityPrayer.this,MainActivityQuran.class);
+                        Intent intent2 = new Intent(ActivityPrayer.this, ActivityHadith.class);
                         startActivity(intent2);
                         break;
                     case R.id.ic_home:
-                        Intent intent3 = new Intent(ActivityPrayer.this,ActivityHome.class);
+                        Intent intent3 = new Intent(ActivityPrayer.this, ActivityHome.class);
                         startActivity(intent3);
                         break;
                     case R.id.ic_prayers:
 
                         break;
                     case R.id.ic_more:
-                        Intent intent5 = new Intent(ActivityPrayer.this,ActivityMore.class);
+                        Intent intent5 = new Intent(ActivityPrayer.this, ActivityAccount.class);
                         startActivity(intent5);
                         break;
                 }
@@ -210,10 +209,10 @@ public class ActivityPrayer extends AppCompatActivity {
                         //get data from json
                         try {
                             //get Location
-                            String  country   = response.get("country").toString();
-                            String  state     = response.get("state").toString();
-                            String  city      = response.get("city").toString();
-                            String  location  = country +", "+ state +", "+city;
+                            String country = response.get("country").toString();
+                            String state = response.get("state").toString();
+                            String city = response.get("city").toString();
+                            String location = country + ", " + state + ", " + city;
 
                             //get date
                             String date = response.getJSONArray("items").getJSONObject(0).get("date_for").toString();
@@ -257,4 +256,6 @@ public class ActivityPrayer extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
 
     }
+
+
 }

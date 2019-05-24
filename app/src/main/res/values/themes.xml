@@ -10,24 +10,11 @@
 
     </style>
 
+    <style name="AppTheme.atiq" parent="AppTheme.Base">
+        <item name="android:windowBackground">@color/windowBackgroundColor</item>
 
-    <!-- Application theme. -->
-    <style name="AppTheme.Mushaf" parent="AppTheme.Base">
-
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-
-        <item name="android:windowBackground">@color/mushaf2</item>
-        <item name="android:colorBackgroundCacheHint">@color/mushaf2</item>
-        <item name="pagerTitleStripBackground">#88b131</item>
-        <item name="pagerTitleStripTextColor">#fff</item>
     </style>
 
-    <style name="AppTheme.White" parent="AppTheme.Base">
-
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="pagerTitleStripBackground">#33b5e5</item>
-        <item name="pagerTitleStripTextColor">#fff</item>
-    </style>
 
 
 </resources>

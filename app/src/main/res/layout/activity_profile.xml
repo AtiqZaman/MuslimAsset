@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ActivityMore">
+    tools:context=".ActivityAccount">
 
 
     <RelativeLayout
@@ -68,7 +68,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Logout"
+                    android:text="@string/logout"
                     android:id="@+id/buttonLogout"
                     android:layout_gravity="center_horizontal" />
 

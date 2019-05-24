@@ -11,11 +11,11 @@ import org.junit.Test;
 import static junit.framework.Assert.assertNotNull;
 import static org.junit.Assert.*;
 
-public class ActivityMoreTest {
+public class LoginActivityTest {
 
     @Rule
-    public ActivityTestRule<ActivityMore> mActivityTestRule=new ActivityTestRule<>(ActivityMore.class);
-    private ActivityMore  myActivity;
+    public ActivityTestRule<LoginActivity> mActivityTestRule=new ActivityTestRule<>(LoginActivity.class);
+    private LoginActivity myActivity;
 
     @Before
     public void setUp() throws Exception {
@@ -24,8 +24,14 @@ public class ActivityMoreTest {
 
     @Test
     public void testActivity(){
-        View v = myActivity.findViewById(R.id.buttonSignup);
+        View v = myActivity.findViewById(R.id.buttonSignin);
         assertNotNull(v);
+
+        View v1 = myActivity.findViewById(R.id.textViewSignUp);
+        assertNotNull(v1);
+
+        View v2 = myActivity.findViewById(R.id.textView);
+        assertNotNull(v2);
     }
 
     @After
@@ -33,4 +39,5 @@ public class ActivityMoreTest {
 
         myActivity=null;
     }
+
 }

@@ -77,7 +77,7 @@ public class ActivityHadith extends AppCompatActivity {
                         startActivity(intent4);
                         break;
                     case R.id.ic_more:
-                        Intent intent5 = new Intent(ActivityHadith.this,ActivityMore.class);
+                        Intent intent5 = new Intent(ActivityHadith.this, ActivityAccount.class);
                         startActivity(intent5);
                         break;
                 }

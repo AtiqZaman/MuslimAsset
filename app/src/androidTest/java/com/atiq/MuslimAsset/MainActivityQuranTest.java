@@ -12,7 +12,6 @@ import static junit.framework.Assert.assertNotNull;
 import static org.junit.Assert.*;
 
 public class MainActivityQuranTest {
-
     @Rule
     public ActivityTestRule<MainActivityQuran> mActivityTestRule=new ActivityTestRule<>(MainActivityQuran.class);
     private MainActivityQuran myActivity;
@@ -26,6 +25,12 @@ public class MainActivityQuranTest {
     public void testActivity(){
         View v = myActivity.findViewById(R.id.main_box);
         assertNotNull(v);
+
+        View v1 = myActivity.findViewById(R.id.bottomNavView_Bar);
+        assertNotNull(v1);
+
+        View v2 = myActivity.findViewById(R.id.relLayoutTopBar);
+        assertNotNull(v2);
     }
 
     @After
@@ -33,4 +38,6 @@ public class MainActivityQuranTest {
 
         myActivity=null;
     }
+
+
 }

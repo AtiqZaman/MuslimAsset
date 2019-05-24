@@ -9,17 +9,11 @@
     android:padding="@dimen/textViewPadding">
 
     <TextView
-        android:id="@+id/word_arabic_textView"
+        android:id="@+id/arabicWord_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></TextView>
 
-    <TextView
-        android:id="@+id/word_trans_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small">
 
-    </TextView>
 
 </LinearLayout>
 

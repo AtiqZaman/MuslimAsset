@@ -16,6 +16,6 @@
         android:title="@string/prayers"/>
     <item android:id="@+id/ic_more"
         android:icon="@drawable/ic_more"
-        android:title="@string/more"/>
+        android:title="@string/account"/>
 
 </menu>

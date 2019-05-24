@@ -3,22 +3,25 @@
     package="com.atiq.MuslimAsset">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+
+
     <application
 
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_round"
         android:name=".prayersActivityFiles.AppController"
         android:label="@string/app_name"
-
-        android:allowBackup="true"
         android:supportsRtl="true"
         android:configChanges="keyboardHidden|orientation|screenSize"
         android:fullBackupContent="false"
-        android:theme="@style/AppTheme.Mushaf">
+        android:theme="@style/AppTheme.atiq">
         <activity
             android:name=".MainActivityQuran"
             android:label="@string/nameTopBarQuran"></activity>
@@ -45,8 +48,8 @@
             android:name=".ActivityPrayer"
             android:label="@string/nameTopBarPryers"></activity>
         <activity
-            android:name=".ActivityMore"
-            android:label="@string/more">
+            android:name=".ActivityAccount"
+            android:label="@string/account">
 
         </activity>
 
